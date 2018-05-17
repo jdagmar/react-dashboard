@@ -31,7 +31,7 @@ function WeatherCard({ city, degree, description, weatherCode }){
         <div className="border border-grey p-2 w-1/4">
             <img src={ WeatherIcon } />
             <p>{ city }</p>
-            <p>{ degree }</p>
+            <p>{ Math.round(degree) }</p>
             <p>{ description }</p>
         </div>
     );
