@@ -6,6 +6,7 @@ import TimerCard from './components/TimerCard';
 import ClockCard from './components/ClockCard';
 import MemoCard from './components/MemoCard';
 import WeatherCard from './components/WeatherCard';
+import { GetWeather } from './components/GetWeather';
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
       <Wrapper>
         <ExchangeCard />
         <ClockCard />
-        <WeatherCard />
+        <GetWeather />
         <Container>
           <TimerCard />
           <MemoCard />
