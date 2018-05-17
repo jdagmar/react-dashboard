@@ -6,10 +6,10 @@ function ExchangeCard() {
     return (
         <div className="border border-grey p-2 w-1/4">
             <p>10 sek</p>
-            <p>1 euro <img className="w-4" src={EuroIcon}/></p>
+            <p>1 euro <img className="w-4" role="img" src={EuroIcon} alt=" "/></p>
             <button>
                 Refresh
-            <img className="w-4 ml-2" src={RefreshIcon} />
+            <img className="w-4 ml-2" role="img" src={RefreshIcon} alt=" "/>
             </button>
         </div>
     );

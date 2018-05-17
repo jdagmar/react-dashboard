@@ -10,15 +10,15 @@ function MemoCard() {
             <div className="flex justify-around mt-2">
                 <button>
                     <span>Save</span>
-                    <img className="w-4 ml-2" src={SaveIcon} />
+                    <img className="w-4 ml-2" role="img" src={SaveIcon} alt=" "/>
                 </button>
                 <button>
                     Edit
-                <img className="w-4 ml-2" src={EditIcon} />
+                <img className="w-4 ml-2" role="img" src={EditIcon} alt=" "/>
                 </button>
                 <button>
                     Delete
-                <img className="w-4 ml-2" src={DeleteIcon} />
+                <img className="w-4 ml-2" role="img" src={DeleteIcon} alt=" "/>
                 </button>
             </div>
         </div>
