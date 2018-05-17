@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Wrapper from './components/Wrapper';
+import Container from './components/Container';
 import ExchangeCard from './components/ExchangeCard';
 import TimerCard from './components/TimerCard';
 import ClockCard from './components/ClockCard';
@@ -11,10 +12,12 @@ class App extends Component {
     return (
       <Wrapper>
         <ExchangeCard />
-        <TimerCard />
         <ClockCard />
-        <MemoCard />
         <WeatherCard />
+        <Container>
+          <TimerCard />
+          <MemoCard />
+        </Container>
       </Wrapper>
     )
   }
