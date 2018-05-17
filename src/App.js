@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
+import Wrapper from './components/Wrapper';
 
 class App extends Component {
   render() {
     return (
-      <p>halloj</p>
+      <Wrapper>
+        <p>halloj</p>
+      </Wrapper>
     )
   }
 }
