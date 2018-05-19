@@ -39,10 +39,6 @@ export class GetWeather extends Component {
     render() {
         return (
             <React.Fragment>
-                <select>
-                    <option>stockholm</option>
-                    <option>malmö</option>
-                </select>
                 <WeatherCard
                     city={this.state.city}
                     degree={this.state.degree}
