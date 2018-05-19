@@ -5,7 +5,7 @@ import ArrowsIcon from '../icons/arrows_switch_horizontal.svg';
 
 export const ExchangeCard = () => {
     return (
-        <div className="border border-grey p-4 w-1/4 flex flex-col justify-between">
+        <div className="border border-grey-light shadow p-4 w-1/4 flex flex-col justify-between">
             <div className="flex justify-center text-lg my-2">
                 <p>10 sek</p>
                 <img className="w-4 self-center mx-4" src={ArrowsIcon} alt="" />

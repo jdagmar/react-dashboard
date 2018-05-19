@@ -13,7 +13,7 @@ export const MemoCard = ({
     onUpdate,
 }) => {
     return (
-        <div className="border border-grey p-2 w-2/5">
+        <div className="border border-grey-light p-2 w-2/5 shadow">
             <div className="mt-2 flex flex-col">
                 {editMode ? (
                     <React.Fragment>

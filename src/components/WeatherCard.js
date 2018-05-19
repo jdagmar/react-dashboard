@@ -28,7 +28,7 @@ function WeatherCard({ city, degree, description, weatherCode }) {
     }
 
     return (
-        <div className="border border-grey p-6 w-1/4 flex justify-around">
+        <div className="border border-grey-light shadow p-6 w-1/4 flex justify-around">
             <img src={WeatherIcon} />
             <div>
                 <p>{city}</p>

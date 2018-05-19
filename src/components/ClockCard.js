@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export const ClockCard = ({ date }) => {
     return (
-        <div className="border border-grey p-6 w-1/4 text-center">
+        <div className="border border-grey-light shadow p-6 w-1/4 text-center">
             <p className="text-xl">
                 <time>
                     {new Intl.DateTimeFormat('en-US', {

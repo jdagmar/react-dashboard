@@ -4,12 +4,12 @@ function TimerCard() {
     let timerStarted = true;
     let timerEnded = false;
     return (
-        <div className="border border-grey p-2 w-2/5">
+        <div className="border border-grey-light shadow p-2 w-2/5">
             <div className="m-auto text-center">
                 {timerStarted ? (
                     <React.Fragment>
                         <select
-                            className="block m-auto w-full border border-grey"
+                            className="block m-auto w-full border border-grey-light"
                             name="interval"
                             size="6"
                         >
