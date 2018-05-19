@@ -17,6 +17,23 @@ class App extends Component {
 		}
 	}
 
+	handleMemoSave = () => {
+		localStorage.setItem('memotext', this.state.memo.memoText);
+		this.handleMemoCancel();
+	}
+
+	handleMemoEdit = () => {
+		this.setState({ memo: { ...this.state.memo, editMode: true } });
+	}
+
+	handleMemoCancel = () => {
+		this.setState({ memo: { ...this.state.memo, editMode: false } });
+	}
+
+	handleMemoUpdate = (memoText) => {
+		this.setState({ memo: { ...this.state.memo, memoText } });
+	}
+
 	render() {
 		return (
 			<Wrapper>
@@ -26,12 +43,12 @@ class App extends Component {
 				<Container>
 					<TimerCard />
 					<MemoCard
-						editMode={this.state.memo.editMode}
-						memoText={this.state.memo.memoText}
-						onEdit={() => this.setState({ memo: { editMode: true } })}
-						onSave={() => this.setState({ memo:  { editMode: false } })}
-            			onCancel={() => this.setState({ memo: { editMode: false } })}
-						onUpdate={(memoText) => this.setState({ memo: { memoText } })}
+						editMode={ this.state.memo.editMode }
+						memoText={ this.state.memo.memoText }
+						onEdit={ this.handleMemoEdit }
+						onSave={ this.handleMemoSave }
+            			onCancel={ this.handleMemoCancel }
+						onUpdate={ this.handleMemoUpdate }
 					/>
         		</Container>
 			</Wrapper>

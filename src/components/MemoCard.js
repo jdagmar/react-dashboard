@@ -12,7 +12,7 @@ export const MemoCard = ({ editMode, onEdit, memoText, onSave, onCancel, onUpdat
                 className="block border border-grey m-2 m-auto w-full"
                 onFocus={ onEdit }
                 value={ memoText }
-                onInput={ event => onUpdate(event.target.value) }
+                onChange={ event => onUpdate(event.target.value) }
             />
 
             <div className="flex justify-around mt-2">
@@ -26,10 +26,6 @@ export const MemoCard = ({ editMode, onEdit, memoText, onSave, onCancel, onUpdat
                         <button onClick={ onCancel } >
                             Cancel
                             <img className="w-4 ml-2" role="img" src={ CancelIcon } alt=" " />
-                        </button>
-                        <button>
-                            Delete
-                            <img className="w-4 ml-2" role="img" src={ DeleteIcon} alt=" " />
                         </button>
                     </div>
                     : null}
