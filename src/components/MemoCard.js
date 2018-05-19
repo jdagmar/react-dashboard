@@ -14,36 +14,51 @@ export const MemoCard = ({
 }) => {
     return (
         <div className="border border-grey p-2 w-2/5">
-            <textarea
-                className="block border border-grey m-2 m-auto w-full"
-                onFocus={onEdit}
-                value={memoText}
-                onChange={event => onUpdate(event.target.value)}
-            />
-
-            <div className="flex justify-around mt-2">
+            <div className="mt-2">
                 {editMode ? (
-                    <div className="ml-auto">
-                        <button className="mr-4" onClick={onSave}>
-                            Save
+                    <React.Fragment>
+                        <textarea
+                            className="block border border-grey m-2 m-auto w-full"
+                            autoFocus="autofocus"
+                            value={memoText}
+                            onChange={event => onUpdate(event.target.value)}
+                        />
+
+                        <div className="mt-4">
+                            <button className="mr-4" onClick={onSave}>
+                                Save
+                                <img
+                                    className="w-4 ml-2"
+                                    role="img"
+                                    src={SaveIcon}
+                                    alt=" "
+                                />
+                            </button>
+                            <button onClick={onCancel}>
+                                Cancel
+                                <img
+                                    className="w-4 ml-2 align-middle"
+                                    role="img"
+                                    src={CancelIcon}
+                                    alt=" "
+                                />
+                            </button>
+                        </div>
+                    </React.Fragment>
+                ) : (
+                    <React.Fragment>
+                        <p>{memoText}</p>
+                        <button className="mt-4" onClick={onEdit}>
+                            Edit
                             <img
                                 className="w-4 ml-2"
                                 role="img"
-                                src={SaveIcon}
+                                src={EditIcon}
                                 alt=" "
                             />
                         </button>
-                        <button onClick={onCancel}>
-                            Cancel
-                            <img
-                                className="w-4 ml-2"
-                                role="img"
-                                src={CancelIcon}
-                                alt=" "
-                            />
-                        </button>
-                    </div>
-                ) : null}
+                    </React.Fragment>
+                )}
             </div>
         </div>
     );
