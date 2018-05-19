@@ -5,34 +5,34 @@ import RainIcon from '../icons/weather_rain.svg';
 import SnowIcon from '../icons/weather_snow.svg';
 import WindIcon from '../icons/weather_wind.svg';
 
-function WeatherCard({ city, degree, description, weatherCode }){
+function WeatherCard({ city, degree, description, weatherCode }) {
     let WeatherIcon = '';
 
-    switch(Math.floor(weatherCode/100)){
+    switch (Math.floor(weatherCode / 100)) {
         case 8:
-        WeatherIcon = ClearIcon;
-        break;
+            WeatherIcon = ClearIcon;
+            break;
         case 2:
-        WeatherIcon = ThunderIcon;
-        break;
+            WeatherIcon = ThunderIcon;
+            break;
         case 3:
         case 5:
-        WeatherIcon = RainIcon;
-        break;
+            WeatherIcon = RainIcon;
+            break;
         case 6:
-        WeatherIcon = SnowIcon;
-        break;
-        case 7: 
-        WeatherIcon = WindIcon;
-        break;
+            WeatherIcon = SnowIcon;
+            break;
+        case 7:
+            WeatherIcon = WindIcon;
+            break;
     }
 
     return (
         <div className="border border-grey p-2 w-1/4">
-            <img src={ WeatherIcon } />
-            <p>{ city }</p>
-            <p>{ Math.round(degree) }</p>
-            <p>{ description }</p>
+            <img src={WeatherIcon} />
+            <p>{city}</p>
+            <p>{Math.round(degree)}</p>
+            <p>{description}</p>
         </div>
     );
 }
