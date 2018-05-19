@@ -8,7 +8,7 @@ export const ExchangeCard = () => {
     return (
         <div className="border border-grey-light shadow w-1/4 flex">
             <div className="bg-green flex p-4">
-                <img src={CurrencyIcon} />
+                <img src={CurrencyIcon} alt=" " />
             </div>
             <div className="flex flex-col justify-between p-4 w-full">
                 <div className="flex justify-center text-lg my-2">
