@@ -4,6 +4,7 @@ import ThunderIcon from '../icons/weather_tempest.svg';
 import RainIcon from '../icons/weather_rain.svg';
 import SnowIcon from '../icons/weather_snow.svg';
 import WindIcon from '../icons/weather_wind.svg';
+import WeatherCardIcon from '../icons/weather_variable_fullmoon.svg';
 
 function WeatherCard({ city, degree, description, weatherCode }) {
     let WeatherIcon = '';
@@ -28,12 +29,17 @@ function WeatherCard({ city, degree, description, weatherCode }) {
     }
 
     return (
-        <div className="border border-grey-light shadow p-6 w-1/4 flex justify-around">
-            <img src={WeatherIcon} />
-            <div>
-                <p>{city}</p>
-                <p>{Math.round(degree)}&#8451;</p>
-                <p>{description}</p>
+        <div className="border border-grey-light shadow flex w-1/4">
+            <div className="bg-blue-light flex p-4">
+                <img src={WeatherCardIcon} />
+            </div>
+            <div className="w-full p-6  flex justify-around">
+                <div>
+                    <p>{city}</p>
+                    <p>{Math.round(degree)}&#8451;</p>
+                    <p>{description}</p>
+                </div>
+                <img className="w-8" src={WeatherIcon} />
             </div>
         </div>
     );
