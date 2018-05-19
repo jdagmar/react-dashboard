@@ -28,11 +28,13 @@ function WeatherCard({ city, degree, description, weatherCode }) {
     }
 
     return (
-        <div className="border border-grey p-2 w-1/4">
+        <div className="border border-grey p-6 w-1/4 flex justify-around">
             <img src={WeatherIcon} />
-            <p>{city}</p>
-            <p>{Math.round(degree)}</p>
-            <p>{description}</p>
+            <div>
+                <p>{city}</p>
+                <p>{Math.round(degree)}&#8451;</p>
+                <p>{description}</p>
+            </div>
         </div>
     );
 }
