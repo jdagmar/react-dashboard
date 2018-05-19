@@ -3,7 +3,7 @@ import Wrapper from './components/Wrapper';
 import Container from './components/Container';
 import ExchangeCard from './components/ExchangeCard';
 import TimerCard from './components/TimerCard';
-import ClockCard from './components/ClockCard';
+import { ClockCard } from './components/ClockCard';
 import { MemoCard } from './components/MemoCard';
 import WeatherCard from './components/WeatherCard';
 import { GetWeather } from './components/GetWeather';
@@ -13,6 +13,9 @@ class App extends Component {
         memo: {
             editMode: false,
             memoText: localStorage.getItem('memotext') || '',
+        },
+        clock: {
+            date: new Date(),
         },
     };
 
@@ -33,11 +36,17 @@ class App extends Component {
         this.setState({ memo: { ...this.state.memo, memoText } });
     };
 
+    componentDidMount() {
+        setInterval(() => {
+            this.setState({ clock: { date: new Date() } });
+        }, 1000);
+    }
+
     render() {
         return (
             <Wrapper>
                 <ExchangeCard />
-                <ClockCard />
+                <ClockCard date={this.state.clock.date} />
                 <GetWeather />
                 <Container>
                     <TimerCard />
