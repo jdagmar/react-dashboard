@@ -15,7 +15,7 @@ const getWeatherCode = weatherData => {
 
 export class GetWeather extends Component {
     state = {
-        city: 'amazonas',
+        city: 'stockholm',
         degree: 0,
         description: '',
         weatherCode: 0,
