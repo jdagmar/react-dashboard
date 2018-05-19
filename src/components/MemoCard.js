@@ -18,14 +18,17 @@ export const MemoCard = ({
                 {editMode ? (
                     <React.Fragment>
                         <textarea
-                            className="block border border-grey m-2 m-auto w-full"
+                            className="block border border-grey m-2 m-auto w-full font-light font-sans"
                             autoFocus="autofocus"
                             value={memoText}
                             onChange={event => onUpdate(event.target.value)}
                         />
 
                         <div className="mt-4">
-                            <button className="mr-4" onClick={onSave}>
+                            <button
+                                className="mr-4 font-light font-sans"
+                                onClick={onSave}
+                            >
                                 Save
                                 <img
                                     className="w-4 ml-2"
@@ -34,7 +37,10 @@ export const MemoCard = ({
                                     alt=" "
                                 />
                             </button>
-                            <button onClick={onCancel}>
+                            <button
+                                className="font-light font-sans"
+                                onClick={onCancel}
+                            >
                                 Cancel
                                 <img
                                     className="w-4 ml-2 align-middle"
@@ -47,8 +53,11 @@ export const MemoCard = ({
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
-                        <p>{memoText}</p>
-                        <button className="mt-4" onClick={onEdit}>
+                        <p className="font-light">{memoText}</p>
+                        <button
+                            className="mt-4 font-light font-sans"
+                            onClick={onEdit}
+                        >
                             Edit
                             <img
                                 className="w-4 ml-2"

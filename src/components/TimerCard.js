@@ -8,10 +8,10 @@ function TimerCard() {
                 <option>10</option>
             </select>
             <div className="flex justify-around">
-                <button className="border border-green-light rounded-sm p-2">
+                <button className="border border-green-light rounded-sm p-2 font-sans font-light">
                     Start
                 </button>
-                <button className="border border-red-light rounded-sm p-2">
+                <button className="border border-red-light rounded-sm p-2 font-sans font-light">
                     Cancel
                 </button>
             </div>

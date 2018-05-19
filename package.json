@@ -5,13 +5,15 @@
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "typeface-roboto": "^0.0.54"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tailwind-build": "tailwind build tailwind.css -c tailwind.js -o src/styles/tailwind-classes.css"
   },
   "devDependencies": {
     "tailwindcss": "^0.5.3"
