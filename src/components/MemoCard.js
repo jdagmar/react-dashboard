@@ -14,17 +14,18 @@ export const MemoCard = ({
 }) => {
     return (
         <div className="border border-grey p-2 w-2/5">
-            <div className="mt-2">
+            <div className="mt-2 flex flex-col">
                 {editMode ? (
                     <React.Fragment>
                         <textarea
                             className="block border border-grey m-2 m-auto w-full font-light font-sans"
                             autoFocus="autofocus"
+                            rows="6"
                             value={memoText}
                             onChange={event => onUpdate(event.target.value)}
                         />
 
-                        <div className="mt-4">
+                        <div className="mt-4 ml-auto">
                             <button
                                 className="mr-4 font-light font-sans"
                                 onClick={onSave}
@@ -55,7 +56,7 @@ export const MemoCard = ({
                     <React.Fragment>
                         <p className="font-light">{memoText}</p>
                         <button
-                            className="mt-4 font-light font-sans"
+                            className="mt-4 font-light font-sans ml-auto"
                             onClick={onEdit}
                         >
                             Edit
