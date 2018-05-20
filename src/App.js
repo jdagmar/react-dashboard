@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Wrapper } from './components/Wrapper';
-import { Header } from './components/Header';
+import { Sidebar } from './components/Sidebar';
 import { Container } from './components/Container';
 import { ExchangeCard } from './components/ExchangeCard';
 import { TimerCard } from './components/TimerCard';
@@ -46,21 +46,25 @@ class App extends Component {
     render() {
         return (
             <Wrapper>
-                <Header />
-                <ExchangeCard />
-                <ClockCard date={this.state.clock.date} />
-                <GetWeather />
-                <Container>
-                    <TimerCard />
-                    <MemoCard
-                        editMode={this.state.memo.editMode}
-                        memoText={this.state.memo.memoText}
-                        onEdit={this.handleMemoEdit}
-                        onSave={this.handleMemoSave}
-                        onCancel={this.handleMemoCancel}
-                        onUpdate={this.handleMemoUpdate}
-                    />
-                </Container>
+                <Sidebar />
+                <div className="flex flex-wrap flex-col w-5/6 mt-4">
+                    <div className="flex w-full justify-around">
+                        <ExchangeCard />
+                        <ClockCard date={this.state.clock.date} />
+                        <GetWeather />
+                    </div>
+                    <Container>
+                        <TimerCard />
+                        <MemoCard
+                            editMode={this.state.memo.editMode}
+                            memoText={this.state.memo.memoText}
+                            onEdit={this.handleMemoEdit}
+                            onSave={this.handleMemoSave}
+                            onCancel={this.handleMemoCancel}
+                            onUpdate={this.handleMemoUpdate}
+                        />
+                    </Container>
+                </div>
             </Wrapper>
         );
     }
