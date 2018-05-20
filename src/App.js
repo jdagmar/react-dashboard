@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Wrapper } from './components/Wrapper';
+import { Header } from './components/Header';
 import { Container } from './components/Container';
 import { ExchangeCard } from './components/ExchangeCard';
 import { TimerCard } from './components/TimerCard';
@@ -45,6 +46,7 @@ class App extends Component {
     render() {
         return (
             <Wrapper>
+                <Header />
                 <ExchangeCard />
                 <ClockCard date={this.state.clock.date} />
                 <GetWeather />
