@@ -3,6 +3,7 @@ import SaveIcon from '../icons/basic_floppydisk.svg';
 import EditIcon from '../icons/software_pencil.svg';
 import DeleteIcon from '../icons/basic_trashcan.svg';
 import CancelIcon from '../icons/arrows_remove.svg';
+import MemoIcon from '../icons/basic_book_pencil.svg';
 
 export const MemoCard = ({
     editMode,
@@ -13,19 +14,22 @@ export const MemoCard = ({
     onUpdate,
 }) => {
     return (
-        <div className="border border-grey-light p-2 w-2/5 shadow">
-            <div className="mt-2 flex flex-col">
+        <div className="border border-grey-light flex w-2/5 shadow">
+            <div className="bg-yellow-dark p-2">
+                <img className="w-8" src={MemoIcon} />
+            </div>
+            <div className="mt-2 p-2 flex flex-col w-full justify-between h-full">
                 {editMode ? (
                     <React.Fragment>
                         <textarea
-                            className="block border border-grey m-2 m-auto w-full font-light font-sans"
+                            className="block border border-grey  w-full font-light font-sans"
                             autoFocus="autofocus"
                             rows="6"
                             value={memoText}
                             onChange={event => onUpdate(event.target.value)}
                         />
 
-                        <div className="mt-4 ml-auto">
+                        <div className="my-4 ml-auto">
                             <button
                                 className="mr-4 font-light font-sans"
                                 onClick={onSave}
@@ -53,10 +57,10 @@ export const MemoCard = ({
                         </div>
                     </React.Fragment>
                 ) : (
-                    <React.Fragment>
+                    <div className="flex justify-between flex-col h-full">
                         <p className="font-light">{memoText}</p>
                         <button
-                            className="mt-4 font-light font-sans ml-auto"
+                            className="my-4 font-light font-sans ml-auto"
                             onClick={onEdit}
                         >
                             Edit
@@ -67,7 +71,7 @@ export const MemoCard = ({
                                 alt=" "
                             />
                         </button>
-                    </React.Fragment>
+                    </div>
                 )}
             </div>
         </div>

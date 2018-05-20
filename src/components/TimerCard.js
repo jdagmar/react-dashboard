@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import TimerIcon from '../icons/basic_anticlockwise.svg';
 
-function TimerCard() {
+export const TimerCard = () => {
     let timerStarted = true;
     let timerEnded = false;
     return (
-        <div className="border border-grey-light shadow p-2 w-2/5">
-            <div className="m-auto text-center">
+        <div className="border border-grey-light shadow w-2/5 flex">
+            <div className="bg-grey-darker p-2">
+                <img className="w-8" src={TimerIcon} alt=" " />
+            </div>
+            <div className="p-2 text-center w-full">
                 {timerStarted ? (
                     <React.Fragment>
                         <select
@@ -56,6 +60,4 @@ function TimerCard() {
             </div>
         </div>
     );
-}
-
-export default TimerCard;
+};
