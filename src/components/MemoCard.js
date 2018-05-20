@@ -14,7 +14,7 @@ export const MemoCard = ({
     onUpdate,
 }) => {
     return (
-        <div className="border border-grey-light flex w-2/5 shadow bg-white">
+        <div className="flex w-2/5 shadow bg-white">
             <div className="bg-yellow-dark p-2">
                 <img className="w-8" src={MemoIcon} />
             </div>

@@ -29,7 +29,7 @@ export const WeatherCard = ({ city, degree, description, weatherCode }) => {
     }
 
     return (
-        <div className="border border-grey-light shadow flex w-1/4">
+        <div className="shadow flex w-1/4">
             <div className="bg-blue-light flex p-4">
                 <img src={WeatherCardIcon} alt=" " />
             </div>

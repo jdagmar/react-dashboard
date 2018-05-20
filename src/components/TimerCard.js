@@ -5,7 +5,7 @@ export const TimerCard = () => {
     let timerStarted = true;
     let timerEnded = false;
     return (
-        <div className="border border-grey-light shadow w-2/5 flex bg-white">
+        <div className="shadow w-2/5 flex bg-white">
             <div className="bg-indigo-darker p-2">
                 <img className="w-8" src={TimerIcon} alt=" " />
             </div>
