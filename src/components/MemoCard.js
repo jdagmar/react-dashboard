@@ -14,11 +14,11 @@ export const MemoCard = ({
     onUpdate,
 }) => {
     return (
-        <div className="border border-grey-light flex w-2/5 shadow">
+        <div className="border border-grey-light flex w-2/5 shadow bg-white">
             <div className="bg-yellow-dark p-2">
                 <img className="w-8" src={MemoIcon} />
             </div>
-            <div className="mt-2 p-2 flex flex-col w-full justify-between h-full">
+            <div className="mt-2 p-2 flex flex-col w-full justify-between h-full ">
                 {editMode ? (
                     <React.Fragment>
                         <textarea

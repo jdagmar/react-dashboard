@@ -33,7 +33,7 @@ export const WeatherCard = ({ city, degree, description, weatherCode }) => {
             <div className="bg-blue-light flex p-4">
                 <img src={WeatherCardIcon} alt=" " />
             </div>
-            <div className="w-full p-6 flex justify-around">
+            <div className="w-full p-6 flex justify-around bg-white">
                 <div className="leading-normal">
                     <p>{city}</p>
                     <p>{Math.round(degree)}&#8451;</p>
