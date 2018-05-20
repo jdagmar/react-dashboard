@@ -36,7 +36,7 @@ export const TimerCard = () => {
                                 30 min
                             </option>
                         </select>
-                        <button className="block w-full my-2 border border-green-light p-4 font-sans font-light hover:bg-green-light hover:text-white">
+                        <button className="block w-full my-2 border border-green p-4 font-sans font-light hover:bg-green hover:text-white">
                             Start
                         </button>
                     </React.Fragment>
