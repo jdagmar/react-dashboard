@@ -6,7 +6,7 @@ import SnowIcon from '../icons/weather_snow.svg';
 import WindIcon from '../icons/weather_wind.svg';
 import WeatherCardIcon from '../icons/weather_variable_fullmoon.svg';
 
-function WeatherCard({ city, degree, description, weatherCode }) {
+export const WeatherCard = ({ city, degree, description, weatherCode }) => {
     let WeatherIcon = '';
 
     switch (Math.floor(weatherCode / 100)) {
@@ -43,6 +43,4 @@ function WeatherCard({ city, degree, description, weatherCode }) {
             </div>
         </div>
     );
-}
-
-export default WeatherCard;
+};

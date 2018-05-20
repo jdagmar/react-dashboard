@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WeatherCard from './WeatherCard';
+import { WeatherCard } from './WeatherCard';
 
 const getDegree = weatherData => {
     return weatherData.main.temp;
