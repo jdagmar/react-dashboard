@@ -3,6 +3,7 @@ import { Wrapper } from './components/Wrapper';
 import { Sidebar } from './components/Sidebar';
 import { Container } from './components/Container';
 import { ExchangeCard } from './components/ExchangeCard';
+import { GetCurrency } from './components/GetCurrency';
 import { TimerCard } from './components/TimerCard';
 import { ClockCard } from './components/ClockCard';
 import { MemoCard } from './components/MemoCard';
@@ -49,7 +50,7 @@ class App extends Component {
                 <Sidebar />
                 <div className="flex flex-wrap flex-col w-5/6 mt-4">
                     <div className="flex w-full justify-around">
-                        <ExchangeCard />
+                        <GetCurrency />
                         <ClockCard date={this.state.clock.date} />
                         <GetWeather />
                     </div>

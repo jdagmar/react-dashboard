@@ -28,13 +28,13 @@ export class GetWeather extends Component {
             }&APPID=50182582175ed60ea90f269ea76e975d&units=metric`
         )
             .then(response => response.json())
-            .then(response =>
+            .then(weatherData => {
                 this.setState({
-                    degree: getDegree(response),
-                    description: getDescription(response),
-                    weatherCode: getWeatherCode(response),
-                })
-            );
+                    degree: getDegree(weatherData),
+                    description: getDescription(weatherData),
+                    weatherCode: getWeatherCode(weatherData),
+                });
+            });
     }
     render() {
         return (
