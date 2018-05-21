@@ -39,7 +39,7 @@ export const WeatherCard = ({ city, degree, description, weatherCode }) => {
                     <p>{Math.round(degree)}&#8451;</p>
                     <p>{description}</p>
                 </div>
-                <img className="w-8" src={WeatherIcon} />
+                <img className="w-8" src={WeatherIcon} alt=" " />
             </div>
         </div>
     );

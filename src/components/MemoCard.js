@@ -16,7 +16,7 @@ export const MemoCard = ({
     return (
         <div className="flex w-2/5 shadow bg-white">
             <div className="bg-yellow-dark p-2">
-                <img className="w-8" src={MemoIcon} />
+                <img className="w-8" src={MemoIcon} alt=" " />
             </div>
             <div className="mt-2 p-2 flex flex-col w-full justify-between h-full ">
                 {editMode ? (
