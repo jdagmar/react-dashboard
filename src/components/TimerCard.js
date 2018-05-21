@@ -48,7 +48,11 @@ export const TimerCard = ({
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
+                        <label htmlFor="intervals" hidden>
+                            Choose interval
+                        </label>
                         <select
+                            id="intervals"
                             onChange={getOptionValue}
                             className="block m-auto w-full border border-grey-light"
                             name="interval"
