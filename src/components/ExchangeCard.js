@@ -4,24 +4,24 @@ import RefreshIcon from '../icons/arrows_rotate.svg';
 import ArrowsIcon from '../icons/arrows_switch_horizontal.svg';
 import CurrencyIcon from '../icons/ecommerce_banknotes.svg';
 
-export const ExchangeCard = () => {
+export const ExchangeCard = ({ sek, euro, timestamp }) => {
     return (
         <div className="shadow w-1/4 flex bg-white">
             <div className="bg-green flex p-4">
                 <img src={CurrencyIcon} alt=" " />
             </div>
             <div className="flex flex-col justify-between p-4 w-full">
-                <div className="flex justify-center text-lg my-2">
-                    <p>10 sek</p>
+                <div className="flex justify-center text-l my-2">
+                    <p>{Math.round(sek)} SEK</p>
                     <img
                         className="w-4 self-center mx-4"
                         src={ArrowsIcon}
                         alt=""
                     />
-                    <p>1 euro</p>
+                    <p>{euro} EUR</p>
                 </div>
                 <p className="text-sm text-center">
-                    Updated: <time>09:09:1990</time>
+                    Updated: <time>{timestamp}</time>
                 </p>
                 <div className="ml-auto mt-4">
                     <button className="font-light font-sans">
