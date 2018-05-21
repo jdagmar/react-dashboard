@@ -37,7 +37,6 @@ export const MemoCard = ({
                                 Save
                                 <img
                                     className="w-4 ml-2"
-                                    role="img"
                                     src={SaveIcon}
                                     alt=" "
                                 />
@@ -49,7 +48,6 @@ export const MemoCard = ({
                                 Cancel
                                 <img
                                     className="w-4 ml-2 align-middle"
-                                    role="img"
                                     src={CancelIcon}
                                     alt=" "
                                 />
@@ -64,12 +62,7 @@ export const MemoCard = ({
                             onClick={onEdit}
                         >
                             Edit
-                            <img
-                                className="w-4 ml-2"
-                                role="img"
-                                src={EditIcon}
-                                alt=" "
-                            />
+                            <img className="w-4 ml-2" src={EditIcon} alt=" " />
                         </button>
                     </div>
                 )}

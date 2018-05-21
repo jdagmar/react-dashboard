@@ -41,7 +41,6 @@ export const ExchangeCard = ({ sek, euro, date, refresh }) => {
                         Refresh
                         <img
                             className="w-4 ml-2 align-text-top"
-                            role="img"
                             src={RefreshIcon}
                             alt=" "
                         />
