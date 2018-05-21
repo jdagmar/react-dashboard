@@ -20,7 +20,7 @@ export const ExchangeCard = ({ sek, euro, date, refresh }) => {
                     />
                     <p>{euro} EUR</p>
                 </div>
-                <p className="text-sm text-center">
+                <p className="text-xs text-center">
                     Updated:{' '}
                     <time>
                         {new Intl.DateTimeFormat('en-US', {
@@ -34,7 +34,10 @@ export const ExchangeCard = ({ sek, euro, date, refresh }) => {
                     </time>
                 </p>
                 <div className="ml-auto mt-4">
-                    <button onClick={refresh} className="font-light font-sans">
+                    <button
+                        onClick={refresh}
+                        className="font-light font-sans text-sm"
+                    >
                         Refresh
                         <img
                             className="w-4 ml-2 align-text-top"
