@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ClearIcon from '../icons/weather_sun.svg';
 import ThunderIcon from '../icons/weather_tempest.svg';
 import RainIcon from '../icons/weather_rain.svg';

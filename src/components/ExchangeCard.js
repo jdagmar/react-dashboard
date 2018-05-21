@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import EuroIcon from '../icons/ecommerce_euro.svg';
+import React from 'react';
 import RefreshIcon from '../icons/arrows_rotate.svg';
 import ArrowsIcon from '../icons/arrows_switch_horizontal.svg';
 import CurrencyIcon from '../icons/ecommerce_banknotes.svg';

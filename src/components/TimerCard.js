@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TimerIcon from '../icons/basic_anticlockwise.svg';
 
 const FormatedInterval = ({ interval }) => {

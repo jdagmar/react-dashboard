@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SaveIcon from '../icons/basic_floppydisk.svg';
 import EditIcon from '../icons/software_pencil.svg';
-import DeleteIcon from '../icons/basic_trashcan.svg';
 import CancelIcon from '../icons/arrows_remove.svg';
 import MemoIcon from '../icons/basic_book_pencil.svg';
 

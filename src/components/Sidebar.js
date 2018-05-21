@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DashboardIcon from '../icons/basic_accelerator.svg';
 import SettingsIcon from '../icons/basic_gear.svg';
 import NotificationIcon from '../icons/music_bell.svg';

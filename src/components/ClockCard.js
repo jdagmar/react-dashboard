@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CalendarIcon from '../icons/basic_calendar.svg';
 
 export const ClockCard = ({ date }) => {

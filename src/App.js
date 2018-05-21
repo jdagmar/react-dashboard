@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import { Wrapper } from './components/Wrapper';
 import { Sidebar } from './components/Sidebar';
 import { Container } from './components/Container';
-import { ExchangeCard } from './components/ExchangeCard';
 import { GetCurrency } from './components/GetCurrency';
 import { TimerCard } from './components/TimerCard';
 import { ClockCard } from './components/ClockCard';
 import { MemoCard } from './components/MemoCard';
-import { WeatherCard } from './components/WeatherCard';
 import { GetWeather } from './components/GetWeather';
 
 class App extends Component {
