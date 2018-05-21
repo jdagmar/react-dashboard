@@ -9,18 +9,18 @@ const getEuro = currencyData => {
     return currencyData.rates.EUR;
 };
 
-const getTimestamp = currencyData => {
-    return currencyData.date;
+const getDate = currencyData => {
+    return new Date(currencyData.timestamp * 1000);
 };
 
 export class GetCurrency extends Component {
     state = {
-        euro: 0,
-        sek: 0,
-        timestamp: 0,
+        sek: localStorage.getItem('sek') || 0,
+        euro: localStorage.getItem('euro') || 0,
+        date: 0,
     };
 
-    componentWillMount() {
+    GetCurrencyData = () => {
         fetch(
             'http://data.fixer.io/api/latest?access_key=1c66f4d5cb5e0f7ae27733ec8a85bca4'
         )
@@ -29,9 +29,18 @@ export class GetCurrency extends Component {
                 this.setState({
                     euro: getEuro(currencyData),
                     sek: getSek(currencyData),
-                    timestamp: getTimestamp(currencyData),
+                    date: getDate(currencyData),
                 });
+            })
+            .then(() => {
+                localStorage.setItem('sek', this.state.sek);
+                localStorage.setItem('euro', this.state.euro);
+                localStorage.setItem('date', this.state.date);
             });
+    };
+
+    componentWillMount() {
+        this.GetCurrencyData();
     }
 
     render() {
@@ -40,7 +49,8 @@ export class GetCurrency extends Component {
                 <ExchangeCard
                     euro={this.state.euro}
                     sek={this.state.sek}
-                    timestamp={this.state.timestamp}
+                    date={this.state.date}
+                    refresh={this.GetCurrencyData}
                 />
             </React.Fragment>
         );

@@ -4,7 +4,7 @@ import RefreshIcon from '../icons/arrows_rotate.svg';
 import ArrowsIcon from '../icons/arrows_switch_horizontal.svg';
 import CurrencyIcon from '../icons/ecommerce_banknotes.svg';
 
-export const ExchangeCard = ({ sek, euro, timestamp }) => {
+export const ExchangeCard = ({ sek, euro, date, refresh }) => {
     return (
         <div className="shadow w-1/4 flex bg-white">
             <div className="bg-green flex p-4">
@@ -21,10 +21,20 @@ export const ExchangeCard = ({ sek, euro, timestamp }) => {
                     <p>{euro} EUR</p>
                 </div>
                 <p className="text-sm text-center">
-                    Updated: <time>{timestamp}</time>
+                    Updated:{' '}
+                    <time>
+                        {new Intl.DateTimeFormat('en-US', {
+                            hour12: false,
+                            month: 'short',
+                            day: '2-digit',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                        }).format(date)}
+                    </time>
                 </p>
                 <div className="ml-auto mt-4">
-                    <button className="font-light font-sans">
+                    <button onClick={refresh} className="font-light font-sans">
                         Refresh
                         <img
                             className="w-4 ml-2 align-text-top"
