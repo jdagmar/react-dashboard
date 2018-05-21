@@ -10,9 +10,6 @@ export const WeatherCard = ({ city, degree, description, weatherCode }) => {
     let WeatherIcon = '';
 
     switch (Math.floor(weatherCode / 100)) {
-        case 8:
-            WeatherIcon = ClearIcon;
-            break;
         case 2:
             WeatherIcon = ThunderIcon;
             break;
@@ -25,6 +22,9 @@ export const WeatherCard = ({ city, degree, description, weatherCode }) => {
             break;
         case 7:
             WeatherIcon = WindIcon;
+            break;
+        default:
+            WeatherIcon = ClearIcon;
             break;
     }
 
