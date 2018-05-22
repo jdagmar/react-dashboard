@@ -7,6 +7,8 @@ import { TimerCard } from './components/TimerCard';
 import { ClockCard } from './components/ClockCard';
 import { MemoCard } from './components/MemoCard';
 import { GetWeather } from './components/GetWeather';
+import { HamburgerBar } from './components/HamburgerBar';
+import { TabBar } from './components/TabBar';
 
 class App extends Component {
     state = {
@@ -94,9 +96,10 @@ class App extends Component {
     render() {
         return (
             <Wrapper>
+                <HamburgerBar />
                 <Sidebar />
-                <div className="flex flex-wrap flex-col w-5/6 mt-4">
-                    <div className="flex w-full justify-around">
+                <div className="flex flex-wrap flex-col w-5/6 mt-4 m-auto">
+                    <div className="flex flex-wrap w-full justify-around">
                         <GetCurrency />
                         <ClockCard date={this.state.clock.date} />
                         <GetWeather />
@@ -120,6 +123,7 @@ class App extends Component {
                         />
                     </Container>
                 </div>
+                <TabBar />
             </Wrapper>
         );
     }

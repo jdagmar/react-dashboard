@@ -5,7 +5,7 @@ import CurrencyIcon from '../icons/ecommerce_banknotes.svg';
 
 export const ExchangeCard = ({ sek, euro, date, refresh }) => {
     return (
-        <div className="shadow w-1/4 flex bg-white">
+        <div className="shadow w-full lg:w-1/4 flex bg-white m-auto mb-2">
             <div className="bg-green flex p-4">
                 <img src={CurrencyIcon} alt=" " />
             </div>
