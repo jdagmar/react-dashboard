@@ -26,6 +26,16 @@ class App extends Component {
             startInterval: 60,
             counter: '',
         },
+        mobileMenu: {
+            isOpen: true,
+        },
+    };
+
+    handleMenuToggle = () => {
+        const currentState = this.state.mobileMenu.isOpen;
+        this.setState({
+            mobileMenu: { ...this.state.mobileMenu, isOpen: !currentState },
+        });
     };
 
     handleSelectedOption = event => {
@@ -91,13 +101,20 @@ class App extends Component {
         setInterval(() => {
             this.setState({ clock: { date: new Date() } });
         }, 1000);
+        window.addEventListener('resize', () => {
+            const isOpen = window.innerWidth > 992;
+
+            this.setState({
+                mobileMenu: { ...this.state.mobileMenu, isOpen },
+            });
+        });
     }
 
     render() {
         return (
             <Wrapper>
-                <HamburgerBar />
-                <Sidebar />
+                <HamburgerBar toggleMenu={this.handleMenuToggle} />
+                {this.state.mobileMenu.isOpen && <Sidebar />}
                 <div className="flex flex-wrap flex-col w-5/6 mt-4 m-auto">
                     <div className="flex flex-wrap w-full justify-around">
                         <GetCurrency />

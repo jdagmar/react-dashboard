@@ -5,7 +5,7 @@ import NotificationIcon from '../icons/music_bell.svg';
 import SignoutIcon from '../icons/arrows_move_right.svg';
 
 export const Sidebar = () => (
-    <div className="hidden lg:block h-screen bg-black w-1/6">
+    <div className=" h-screen bg-black w-1/6">
         <nav className="flex flex-col justify-between ">
             <ul className="list-reset">
                 <li className="flex p-4 cursor-pointer bg-grey-darkest">
