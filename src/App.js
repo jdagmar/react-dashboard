@@ -179,7 +179,10 @@ class App extends Component {
                     ) : null}
                 </div>
 
-                <TabBar toggleView={this.handleViewToggle} />
+                <TabBar
+                    toggleView={this.handleViewToggle}
+                    currentPage={this.state.tabBar.currentPage}
+                />
             </Wrapper>
         );
     }
