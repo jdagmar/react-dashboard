@@ -18,6 +18,7 @@ export class GetCurrency extends Component {
         sek: localStorage.getItem('sek') || 0,
         euro: localStorage.getItem('euro') || 0,
         date: 0,
+        isSuccess: true,
     };
 
     GetCurrencyData = () => {
@@ -36,6 +37,11 @@ export class GetCurrency extends Component {
                 localStorage.setItem('sek', this.state.sek);
                 localStorage.setItem('euro', this.state.euro);
                 localStorage.setItem('date', this.state.date);
+            })
+            .catch(error => {
+                this.setState({
+                    isSuccess: false,
+                });
             });
     };
 
@@ -51,6 +57,7 @@ export class GetCurrency extends Component {
                     sek={this.state.sek}
                     date={this.state.date}
                     refresh={this.GetCurrencyData}
+                    isSuccess={this.state.isSuccess}
                 />
             </React.Fragment>
         );
