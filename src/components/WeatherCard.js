@@ -5,8 +5,15 @@ import RainIcon from '../icons/weather_rain.svg';
 import SnowIcon from '../icons/weather_snow.svg';
 import WindIcon from '../icons/weather_wind.svg';
 import WeatherCardIcon from '../icons/weather_variable_fullmoon.svg';
+import SadIcon from '../icons/basic_elaboration_message_sad.svg';
 
-export const WeatherCard = ({ city, degree, description, weatherCode }) => {
+export const WeatherCard = ({
+    city,
+    degree,
+    description,
+    weatherCode,
+    isSuccess,
+}) => {
     let WeatherIcon = '';
 
     switch (Math.floor(weatherCode / 100)) {
@@ -34,12 +41,24 @@ export const WeatherCard = ({ city, degree, description, weatherCode }) => {
                 <img src={WeatherCardIcon} alt=" " />
             </div>
             <div className="w-full p-6 flex justify-around bg-white">
-                <div className="leading-normal">
-                    <p>{city}</p>
-                    <p>{Math.round(degree)}&#8451;</p>
-                    <p>{description}</p>
-                </div>
-                <img className="w-8" src={WeatherIcon} alt=" " />
+                {isSuccess ? (
+                    <React.Fragment>
+                        <div className="leading-normal">
+                            <p>{city}</p>
+                            <p>{Math.round(degree)}&#8451;</p>
+                            <p>{description}</p>
+                        </div>
+
+                        <img className="w-8" src={WeatherIcon} alt=" " />
+                    </React.Fragment>
+                ) : (
+                    <React.Fragment>
+                        <p className="w-24">
+                            Weather not available at the moment
+                        </p>
+                        <img className="w-8 h-8" src={SadIcon} alt=" " />
+                    </React.Fragment>
+                )}
             </div>
         </div>
     );

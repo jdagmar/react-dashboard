@@ -19,6 +19,7 @@ export class GetWeather extends Component {
         degree: 0,
         description: '',
         weatherCode: 0,
+        isSuccess: true,
     };
 
     componentWillMount() {
@@ -34,6 +35,12 @@ export class GetWeather extends Component {
                     description: getDescription(weatherData),
                     weatherCode: getWeatherCode(weatherData),
                 });
+            })
+            .catch(error => {
+                // console.error(error);
+                this.setState({
+                    isSuccess: false,
+                });
             });
     }
     render() {
@@ -44,6 +51,7 @@ export class GetWeather extends Component {
                     degree={this.state.degree}
                     description={this.state.description}
                     weatherCode={this.state.weatherCode}
+                    isSuccess={this.state.isSuccess}
                 />
             </React.Fragment>
         );
