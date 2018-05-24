@@ -4,10 +4,15 @@ import TimerIcon from '../icons/basic_anticlockwise.svg';
 const FormatedInterval = ({ interval }) => {
     const minutes = Math.floor(interval / 60);
     const seconds = interval - minutes * 60;
+    const finishedStyle = 'bg-red-light rounded text-white p-2';
 
     return (
-        <p className="text-center text-2xl my-4">
-            <time>{`0${minutes}: ${seconds < 10 ? 0 : ''}${seconds}`}</time>
+        <p
+            className={`text-center text-2xl my-4 ${
+                interval === 0 ? finishedStyle : ''
+            }`}
+        >
+            <time>{`0${minutes}:${seconds < 10 ? 0 : ''}${seconds}`}</time>
         </p>
     );
 };
@@ -31,7 +36,7 @@ export const TimerCard = ({
                         <FormatedInterval interval={interval} />
                         <button
                             onClick={cancelTimer}
-                            className="block w-full border border-red-dark my-2 p-2 font-sans font-light hover:bg-red-dark hover:text-white"
+                            className="block w-full border border-red-light my-2 p-2 font-sans font-light hover:bg-red-light hover:text-white"
                         >
                             <span>Cancel</span>
                         </button>
