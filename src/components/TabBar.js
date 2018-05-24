@@ -14,14 +14,22 @@ export const TabBar = ({ toggleView, currentPage }) => {
                     disabled={isLeftDisabled && 'disabled'}
                     className={isLeftDisabled && disabledStyling}
                 >
-                    <img className="w-10" src={ArrowLeft} />
+                    <img
+                        className="w-10"
+                        src={ArrowLeft}
+                        alt="click to see more content"
+                    />
                 </button>
                 <button
                     onClick={toggleView}
                     disabled={!isLeftDisabled && 'disabled'}
                     className={!isLeftDisabled && disabledStyling}
                 >
-                    <img className="w-10" src={ArrowRight} />
+                    <img
+                        className="w-10"
+                        src={ArrowRight}
+                        alt="click to see more content"
+                    />
                 </button>
             </div>
         </nav>
