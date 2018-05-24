@@ -33,8 +33,10 @@ class App extends Component {
 
     handleMenuToggle = () => {
         const currentState = this.state.mobileMenu.isOpen;
+        const isOpen = !currentState;
+        document.body.style.overflow = isOpen ? 'hidden' : 'auto';
         this.setState({
-            mobileMenu: { ...this.state.mobileMenu, isOpen: !currentState },
+            mobileMenu: { ...this.state.mobileMenu, isOpen },
         });
     };
 

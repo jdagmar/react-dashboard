@@ -5,8 +5,8 @@ import NotificationIcon from '../icons/music_bell.svg';
 import SignoutIcon from '../icons/arrows_move_right.svg';
 
 export const Sidebar = () => (
-    <div className=" h-screen bg-black w-1/6">
-        <nav className="flex flex-col justify-between ">
+    <aside className="h-screen bg-black w-full lg:w-1/6 overflow-hidden h-full">
+        <nav className="flex flex-col justify-between">
             <ul className="list-reset">
                 <li className="flex p-4 cursor-pointer bg-grey-darkest">
                     <img className="w-6 h-6" src={DashboardIcon} alt=" " />
@@ -35,5 +35,5 @@ export const Sidebar = () => (
                 <p className="text-white text-xs self-center">Sign out</p>
             </div>
         </nav>
-    </div>
+    </aside>
 );
