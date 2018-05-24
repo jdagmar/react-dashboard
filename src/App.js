@@ -134,7 +134,7 @@ class App extends Component {
 
     render() {
         const pageOne = (
-            <div className="flex flex-wrap w-full justify-around">
+            <div className="flex flex-wrap w-full justify-around lg:h-32">
                 <GetCurrency />
                 <ClockCard date={this.state.clock.date} />
                 <GetWeather />
@@ -142,7 +142,7 @@ class App extends Component {
         );
 
         const pageTwo = (
-            <div className="w-full flex flex-col lg:flex-row justify-around mt-2">
+            <div className="w-full flex flex-col lg:flex-row justify-around mt-4">
                 <TimerCard
                     timerStarted={this.state.timer.timerStarted}
                     resetTimer={this.handleTimerReset}

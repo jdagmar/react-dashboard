@@ -21,25 +21,25 @@ export const TimerCard = ({
     resetTimer,
 }) => {
     return (
-        <div className="shadow w-full lg:w-2/5 flex bg-white mb-2">
+        <div className="shadow w-full lg:w-2/5 h-48 flex bg-white mb-2">
             <div className="bg-indigo-darker p-2">
                 <img className="w-8" src={TimerIcon} alt=" " />
             </div>
-            <div className="p-2 text-center w-full">
+            <div className="p-2 flex flex-col justify-between text-center w-full">
                 {timerStarted ? (
                     <React.Fragment>
                         <FormatedInterval interval={interval} />
                         <button
                             onClick={cancelTimer}
-                            className="block w-full border border-red-dark my-2 p-4 font-sans font-light hover:bg-red-dark hover:text-white"
+                            className="block w-full border border-red-dark my-2 p-2 font-sans font-light hover:bg-red-dark hover:text-white"
                         >
-                            Cancel
+                            <span>Cancel</span>
                         </button>
                         {interval <= 0 ? (
                             <React.Fragment>
                                 <button
                                     onClick={resetTimer}
-                                    className="block w-full border border-yellow-dark my-2 p-4 font-sans font-light hover:bg-yellow-dark hover:text-white"
+                                    className="block w-full border border-yellow-dark my-2 p-2 font-sans font-light hover:bg-yellow-dark hover:text-white"
                                 >
                                     Reset
                                 </button>
@@ -88,7 +88,7 @@ export const TimerCard = ({
                         </select>
                         <button
                             onClick={startTimer}
-                            className="block w-full my-2 border border-green p-4 font-sans font-light hover:bg-green hover:text-white"
+                            className="block w-full my-2 border border-green p-2 font-sans font-light hover:bg-green hover:text-white"
                         >
                             Start
                         </button>
