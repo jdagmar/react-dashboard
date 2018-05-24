@@ -48,7 +48,6 @@ export const WeatherCard = ({
                             <p>{Math.round(degree)}&#8451;</p>
                             <p>{description}</p>
                         </div>
-
                         <img className="w-8" src={WeatherIcon} alt=" " />
                     </React.Fragment>
                 ) : (
