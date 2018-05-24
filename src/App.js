@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Hammer from 'react-hammerjs';
 import { Wrapper } from './components/Wrapper';
 import { Sidebar } from './components/Sidebar';
 import { Container } from './components/Container';
@@ -166,18 +167,20 @@ class App extends Component {
                 <HamburgerBar toggleMenu={this.handleMenuToggle} />
                 {this.state.mobileMenu.isOpen && <Sidebar />}
 
-                <div className="flex flex-wrap flex-col w-5/6 mt-4 m-auto">
-                    {!this.state.isMobile ? (
-                        <React.Fragment>
-                            {pageOne}
-                            {pageTwo}
-                        </React.Fragment>
-                    ) : this.state.tabBar.currentPage === 'first' ? (
-                        pageOne
-                    ) : this.state.tabBar.currentPage === 'second' ? (
-                        pageTwo
-                    ) : null}
-                </div>
+                <Hammer onSwipe={this.handleViewToggle}>
+                    <div className="flex flex-wrap flex-col w-5/6 mt-4 m-auto">
+                        {!this.state.isMobile ? (
+                            <React.Fragment>
+                                {pageOne}
+                                {pageTwo}
+                            </React.Fragment>
+                        ) : this.state.tabBar.currentPage === 'first' ? (
+                            pageOne
+                        ) : this.state.tabBar.currentPage === 'second' ? (
+                            pageTwo
+                        ) : null}
+                    </div>
+                </Hammer>
 
                 <TabBar
                     toggleView={this.handleViewToggle}
