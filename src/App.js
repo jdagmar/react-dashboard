@@ -12,6 +12,7 @@ import { TabBar } from './components/TabBar';
 
 class App extends Component {
     state = {
+        isMobile: false,
         memo: {
             editMode: false,
             memoText: localStorage.getItem('memotext') || '',
@@ -29,6 +30,17 @@ class App extends Component {
         mobileMenu: {
             isOpen: true,
         },
+        tabBar: {
+            currentPage: 'first',
+        },
+    };
+
+    handleViewToggle = () => {
+        const currentPage = this.state.tabBar.currentPage;
+        const secondPage = currentPage === 'first' ? 'second' : 'first';
+        this.setState({
+            tabBar: { ...this.state.tabBar, currentPage: secondPage },
+        });
     };
 
     handleMenuToggle = () => {
@@ -99,50 +111,75 @@ class App extends Component {
         this.setState({ memo: { ...this.state.memo, memoText } });
     };
 
+    handleWindowSize = () => {
+        const isMobile = window.innerWidth <= 992;
+
+        this.setState({
+            isMobile,
+            mobileMenu: { ...this.state.mobileMenu, isOpen: !isMobile },
+        });
+    };
+
+    componentWillMount() {
+        this.handleWindowSize();
+        window.addEventListener('resize', this.handleWindowSize);
+    }
+
     componentDidMount() {
         setInterval(() => {
             this.setState({ clock: { date: new Date() } });
         }, 1000);
-        window.addEventListener('resize', () => {
-            const isOpen = window.innerWidth > 992;
-
-            this.setState({
-                mobileMenu: { ...this.state.mobileMenu, isOpen },
-            });
-        });
     }
 
     render() {
+        const pageOne = (
+            <div className="flex flex-wrap w-full justify-around">
+                <GetCurrency />
+                <ClockCard date={this.state.clock.date} />
+                <GetWeather />
+            </div>
+        );
+
+        const pageTwo = (
+            <div className="w-full flex flex-col lg:flex-row justify-around mt-2">
+                <TimerCard
+                    timerStarted={this.state.timer.timerStarted}
+                    resetTimer={this.handleTimerReset}
+                    startTimer={this.handleTimerStart}
+                    cancelTimer={this.handleTimerCancel}
+                    getOptionValue={this.handleSelectedOption}
+                    interval={this.state.timer.interval}
+                />
+                <MemoCard
+                    editMode={this.state.memo.editMode}
+                    memoText={this.state.memo.memoText}
+                    onEdit={this.handleMemoEdit}
+                    onSave={this.handleMemoSave}
+                    onCancel={this.handleMemoCancel}
+                    onUpdate={this.handleMemoUpdate}
+                />
+            </div>
+        );
+
         return (
             <Wrapper>
                 <HamburgerBar toggleMenu={this.handleMenuToggle} />
                 {this.state.mobileMenu.isOpen && <Sidebar />}
+
                 <div className="flex flex-wrap flex-col w-5/6 mt-4 m-auto">
-                    <div className="flex flex-wrap w-full justify-around">
-                        <GetCurrency />
-                        <ClockCard date={this.state.clock.date} />
-                        <GetWeather />
-                    </div>
-                    <Container>
-                        <TimerCard
-                            timerStarted={this.state.timer.timerStarted}
-                            resetTimer={this.handleTimerReset}
-                            startTimer={this.handleTimerStart}
-                            cancelTimer={this.handleTimerCancel}
-                            getOptionValue={this.handleSelectedOption}
-                            interval={this.state.timer.interval}
-                        />
-                        <MemoCard
-                            editMode={this.state.memo.editMode}
-                            memoText={this.state.memo.memoText}
-                            onEdit={this.handleMemoEdit}
-                            onSave={this.handleMemoSave}
-                            onCancel={this.handleMemoCancel}
-                            onUpdate={this.handleMemoUpdate}
-                        />
-                    </Container>
+                    {!this.state.isMobile ? (
+                        <React.Fragment>
+                            {pageOne}
+                            {pageTwo}
+                        </React.Fragment>
+                    ) : this.state.tabBar.currentPage === 'first' ? (
+                        pageOne
+                    ) : this.state.tabBar.currentPage === 'second' ? (
+                        pageTwo
+                    ) : null}
                 </div>
-                <TabBar />
+
+                <TabBar toggleView={this.handleViewToggle} />
             </Wrapper>
         );
     }

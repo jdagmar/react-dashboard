@@ -3,7 +3,7 @@ import HamburgerIcon from '../icons/arrows_hamburger.svg';
 
 export const HamburgerBar = ({ toggleMenu }) => {
     return (
-        <div className="w-full lg:hidden bg-black">
+        <div className="w-full lg:hidden bg-black h-16">
             <button onClick={toggleMenu}>
                 <img
                     className="w-10 m-2"
