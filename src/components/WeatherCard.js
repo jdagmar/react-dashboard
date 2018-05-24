@@ -52,7 +52,7 @@ export const WeatherCard = ({
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
-                        <p className="w-24">
+                        <p className="w-24 leading-tight">
                             Weather not available at the moment
                         </p>
                         <img className="w-8 h-8" src={SadIcon} alt=" " />
