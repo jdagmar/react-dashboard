@@ -4,7 +4,7 @@ import ArrowRight from '../icons/arrows_right.svg';
 
 export const TabBar = ({ toggleView, currentPage }) => {
     const isLeftDisabled = currentPage === 'first';
-    const disabledStyling = 'opacity-50';
+    const disabledStyling = 'opacity-50 cursor-not-allowed';
 
     return (
         <nav className="lg:hidden w-full flex m-auto">
