@@ -4,7 +4,15 @@ import ArrowsIcon from '../icons/arrows_switch_horizontal.svg';
 import CurrencyIcon from '../icons/ecommerce_banknotes.svg';
 import SadIcon from '../icons/basic_elaboration_message_sad.svg';
 
-export const ExchangeCard = ({ sek, euro, date, refresh, isSuccess }) => {
+export const ExchangeCard = ({
+    sek,
+    euro,
+    date,
+    refresh,
+    isSuccess,
+    rotateIcon,
+}) => {
+    const rotationClass = 'rotate-animate';
     return (
         <div className="shadow w-full lg:w-1/4 flex bg-white m-auto mb-2 lg:h-full">
             <div className="bg-green flex p-4">
@@ -46,7 +54,9 @@ export const ExchangeCard = ({ sek, euro, date, refresh, isSuccess }) => {
                             >
                                 Refresh
                                 <img
-                                    className="w-4 ml-2 align-text-top"
+                                    className={`w-4 ml-2 align-text-top ${
+                                        rotateIcon ? rotationClass : ''
+                                    }`}
                                     src={RefreshIcon}
                                     alt=" "
                                 />
