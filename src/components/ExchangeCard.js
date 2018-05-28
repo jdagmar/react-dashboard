@@ -25,17 +25,22 @@ export const ExchangeCard = ({
             >
                 {isSuccess ? (
                     <React.Fragment>
-                        <div className="flex justify-center text-l my-2">
-                            <p>{Math.round(sek)} SEK</p>
+                        <div className="flex justify-between mt-2">
+                            <p className="whitespace-no-wrap">
+                                {Number.parseFloat(sek).toFixed(2)}{' '}
+                                <span className="text-xs">SEK</span>
+                            </p>
                             <img
-                                className="w-4 self-center mx-4"
+                                className="w-4 self-center mx-2"
                                 src={ArrowsIcon}
                                 alt=""
                             />
-                            <p>{euro} EUR</p>
+                            <p className="whitespace-no-wrap">
+                                {Number.parseFloat(euro).toFixed(2)}{' '}
+                                <span className="text-xs">EUR</span>
+                            </p>
                         </div>
                         <p className="text-xs text-center">
-                            Updated:{' '}
                             <time>
                                 {new Intl.DateTimeFormat('en-US', {
                                     hour12: false,
