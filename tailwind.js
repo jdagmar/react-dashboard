@@ -876,6 +876,25 @@ module.exports = {
             // center: true,
             // padding: '1rem',
         }),
+        function({ addUtilities }) {
+            const newUtilites = {
+                '.rotate-animate': {
+                    'animation-name': 'rotate',
+                    'animation-duration': '4s',
+                    'animation-iteration-count': 'infinite',
+                    'animation-timing-function': 'linear',
+                },
+                '@keyframes rotate': {
+                    '0%': {
+                        transform: 'rotate(0deg)',
+                    },
+                    '100%': {
+                        transform: 'rotate(360deg)',
+                    },
+                },
+            };
+            addUtilities(newUtilites);
+        },
     ],
 
     /*

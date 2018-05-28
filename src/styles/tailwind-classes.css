@@ -4582,6 +4582,23 @@ button,
   z-index: auto;
 }
 
+.rotate-animate {
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /**
   * Here you would add any custom utilities you need that don't come out of the
   * box with Tailwind.
