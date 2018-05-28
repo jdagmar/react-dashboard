@@ -25,7 +25,7 @@ export const ExchangeCard = ({
             >
                 {isSuccess ? (
                     <React.Fragment>
-                        <div className="flex justify-between mt-2">
+                        <div className="flex justify-center lg:justify-between mt-2 mb-2 lg:mb-0">
                             <p className="whitespace-no-wrap">
                                 {Number.parseFloat(sek).toFixed(2)}{' '}
                                 <span className="text-xs">SEK</span>

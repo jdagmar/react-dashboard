@@ -40,7 +40,7 @@ export const WeatherCard = ({
             <div className="bg-blue-light flex p-4">
                 <img src={WeatherCardIcon} alt=" " />
             </div>
-            <div className="w-full p-6 flex justify-around bg-white">
+            <div className="w-full p-6 flex justify-center lg:justify-around bg-white">
                 {isSuccess ? (
                     <React.Fragment>
                         <div className="leading-normal">
@@ -48,7 +48,11 @@ export const WeatherCard = ({
                             <p>{Math.round(degree)}&#8451;</p>
                             <p>{description}</p>
                         </div>
-                        <img className="w-8" src={WeatherIcon} alt=" " />
+                        <img
+                            className="w-8 h-8 ml-2 self-center"
+                            src={WeatherIcon}
+                            alt=" "
+                        />
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
