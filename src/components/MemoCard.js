@@ -30,7 +30,7 @@ export const MemoCard = ({
 
                         <div className="my-4 ml-auto">
                             <button
-                                className="mr-4 font-light font-sans text-white p-2 w-16 rounded-full bg-green hover:bg-green-dark"
+                                className="mr-4 font-light font-sans text-white p-2 w-24 rounded-full bg-green hover:bg-green-dark"
                                 onClick={onSave}
                             >
                                 Save
