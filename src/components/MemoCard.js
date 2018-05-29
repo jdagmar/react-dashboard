@@ -30,26 +30,16 @@ export const MemoCard = ({
 
                         <div className="my-4 ml-auto">
                             <button
-                                className="mr-4 font-light font-sans"
+                                className="mr-4 font-light font-sans text-white p-2 w-16 rounded-full bg-green hover:bg-green-dark"
                                 onClick={onSave}
                             >
                                 Save
-                                <img
-                                    className="w-4 ml-2"
-                                    src={SaveIcon}
-                                    alt=" "
-                                />
                             </button>
                             <button
-                                className="font-light font-sans"
+                                className="font-light font-sans text-white bg-red-light w-24 rounded-full p-2 hover:bg-red-dark"
                                 onClick={onCancel}
                             >
                                 Cancel
-                                <img
-                                    className="w-4 ml-2 align-middle"
-                                    src={CancelIcon}
-                                    alt=" "
-                                />
                             </button>
                         </div>
                     </React.Fragment>
@@ -57,11 +47,10 @@ export const MemoCard = ({
                     <div className="flex justify-between flex-col h-full">
                         <p className="font-light">{memoText}</p>
                         <button
-                            className="my-4 font-light font-sans ml-auto"
+                            className="my-4 text-white w-16 font-light font-sans ml-auto rounded-full p-2 bg-yellow-dark hover:bg-yellow-darker"
                             onClick={onEdit}
                         >
                             Edit
-                            <img className="w-4 ml-2" src={EditIcon} alt=" " />
                         </button>
                     </div>
                 )}
