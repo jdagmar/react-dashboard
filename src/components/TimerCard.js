@@ -38,7 +38,7 @@ export const TimerCard = ({
                         <div className="flex justify-around">
                             <button
                                 onClick={cancelTimer}
-                                className="w-24 rounded-full my-2 p-2 font-sans font-light bg-red-light text-white hover:bg-red-dark"
+                                className="w-24 rounded-full my-2 p-2 font-sans font-light border border-red-light hover:text-white hover:bg-red-light"
                             >
                                 <span>Cancel</span>
                             </button>
@@ -46,7 +46,7 @@ export const TimerCard = ({
                                 <React.Fragment>
                                     <button
                                         onClick={resetTimer}
-                                        className="w-24 rounded-full my-2 p-2 font-sans font-light bg-yellow-dark hover:bg-yellow-darker text-white"
+                                        className="w-24 rounded-full my-2 p-2 font-sans font-light border border-yellow-dark hover:text-white hover:bg-yellow-dark"
                                     >
                                         Reset
                                     </button>
@@ -96,7 +96,7 @@ export const TimerCard = ({
                         </select>
                         <button
                             onClick={startTimer}
-                            className="m-auto w-16 rounded-full my-2 p-2 font-sans font-light bg-green text-white hover:bg-green-dark"
+                            className="m-auto w-16 rounded-full my-2 p-2 font-sans font-light border border-green hover:text-white hover:bg-green"
                         >
                             Start
                         </button>
