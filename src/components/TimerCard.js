@@ -34,22 +34,25 @@ export const TimerCard = ({
                 {timerStarted ? (
                     <React.Fragment>
                         <FormatedInterval interval={interval} />
-                        <button
-                            onClick={cancelTimer}
-                            className="block w-full border border-red-light my-2 p-2 font-sans font-light hover:bg-red-light hover:text-white"
-                        >
-                            <span>Cancel</span>
-                        </button>
-                        {interval <= 0 ? (
-                            <React.Fragment>
-                                <button
-                                    onClick={resetTimer}
-                                    className="block w-full border border-yellow-dark my-2 p-2 font-sans font-light hover:bg-yellow-dark hover:text-white"
-                                >
-                                    Reset
-                                </button>
-                            </React.Fragment>
-                        ) : null}
+
+                        <div className="flex justify-around">
+                            <button
+                                onClick={cancelTimer}
+                                className="w-24 rounded-full my-2 p-2 font-sans font-light bg-red-light text-white hover:bg-red-dark"
+                            >
+                                <span>Cancel</span>
+                            </button>
+                            {interval <= 0 ? (
+                                <React.Fragment>
+                                    <button
+                                        onClick={resetTimer}
+                                        className="w-24 rounded-full my-2 p-2 font-sans font-light bg-yellow-dark hover:bg-yellow-darker text-white"
+                                    >
+                                        Reset
+                                    </button>
+                                </React.Fragment>
+                            ) : null}
+                        </div>
                     </React.Fragment>
                 ) : (
                     <React.Fragment>
@@ -93,7 +96,7 @@ export const TimerCard = ({
                         </select>
                         <button
                             onClick={startTimer}
-                            className="block w-full my-2 border border-green p-2 font-sans font-light hover:bg-green hover:text-white"
+                            className="m-auto w-16 rounded-full my-2 p-2 font-sans font-light bg-green text-white hover:bg-green-dark"
                         >
                             Start
                         </button>
