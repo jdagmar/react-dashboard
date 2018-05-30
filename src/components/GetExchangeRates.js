@@ -13,7 +13,7 @@ const getDate = currencyData => {
     return new Date(currencyData.timestamp * 1000);
 };
 
-export class GetCurrency extends Component {
+export class GetExchangeRates extends Component {
     state = {
         sek: localStorage.getItem('sek') || 0,
         euro: localStorage.getItem('euro') || 0,

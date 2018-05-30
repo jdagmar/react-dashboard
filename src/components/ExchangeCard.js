@@ -55,6 +55,7 @@ export const ExchangeCard = ({
                         <div className="ml-auto mt-4">
                             <button
                                 onClick={refresh}
+                                onMo
                                 className="font-light font-sans text-sm"
                             >
                                 Refresh

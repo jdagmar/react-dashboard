@@ -3,7 +3,7 @@ import Hammer from 'react-hammerjs';
 import { Wrapper } from './components/Wrapper';
 import { Sidebar } from './components/Sidebar';
 import { Container } from './components/Container';
-import { GetCurrency } from './components/GetCurrency';
+import { GetExchangeRates } from './components/GetExchangeRates';
 import { TimerCard } from './components/TimerCard';
 import { ClockCard } from './components/ClockCard';
 import { MemoCard } from './components/MemoCard';
@@ -135,7 +135,7 @@ class App extends Component {
     render() {
         const pageOne = (
             <div className="flex flex-wrap w-full justify-around lg:h-32">
-                <GetCurrency />
+                <GetExchangeRates />
                 <ClockCard date={this.state.clock.date} />
                 <GetWeather />
             </div>
