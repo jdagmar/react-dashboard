@@ -2,7 +2,7 @@ import React from 'react';
 import RefreshIcon from '../icons/arrows_rotate.svg';
 import ArrowsIcon from '../icons/arrows_switch_horizontal.svg';
 import CurrencyIcon from '../icons/ecommerce_banknotes.svg';
-import SadIcon from '../icons/basic_elaboration_message_sad.svg';
+import FailIcon from '../icons/basic_elaboration_message_sad.svg';
 
 export const ExchangeCard = ({
     sek,
@@ -10,7 +10,7 @@ export const ExchangeCard = ({
     date,
     refresh,
     isSuccess,
-    rotateIcon,
+    isFetching,
 }) => {
     const rotationClass = 'rotate-animate';
     return (
@@ -61,7 +61,7 @@ export const ExchangeCard = ({
                                 Check for updates
                                 <img
                                     className={`w-4 ml-2 align-text-top ${
-                                        rotateIcon ? rotationClass : ''
+                                        isFetching ? rotationClass : ''
                                     }`}
                                     src={RefreshIcon}
                                     alt=" "
@@ -74,7 +74,7 @@ export const ExchangeCard = ({
                         <p className="leading-tight">
                             Exchange rates not available at the moment
                         </p>
-                        <img className="w-8 h-8" src={SadIcon} alt=" " />
+                        <img className="w-8 h-8" src={FailIcon} alt=" " />
                     </React.Fragment>
                 )}
             </div>

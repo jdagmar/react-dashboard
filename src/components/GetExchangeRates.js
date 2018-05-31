@@ -19,11 +19,11 @@ export class GetExchangeRates extends Component {
         euro: localStorage.getItem('euro') || 0,
         date: 0,
         isSuccess: true,
-        rotateIcon: false,
+        isFetching: false,
     };
 
     GetCurrencyData = () => {
-        this.setState({ rotateIcon: true });
+        this.setState({ isFetching: true });
         fetch(
             'http://data.fixer.io/api/latest?access_key=1c66f4d5cb5e0f7ae27733ec8a85bca4'
         )
@@ -39,7 +39,7 @@ export class GetExchangeRates extends Component {
                 localStorage.setItem('sek', this.state.sek);
                 localStorage.setItem('euro', this.state.euro);
                 localStorage.setItem('date', this.state.date);
-                this.setState({ rotateIcon: false });
+                this.setState({ isFetching: false });
             })
             .catch(error => {
                 this.setState({
@@ -61,7 +61,7 @@ export class GetExchangeRates extends Component {
                     date={this.state.date}
                     refresh={this.GetCurrencyData}
                     isSuccess={this.state.isSuccess}
-                    rotateIcon={this.state.rotateIcon}
+                    isFetching={this.state.isFetching}
                 />
             </React.Fragment>
         );
