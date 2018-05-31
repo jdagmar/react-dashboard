@@ -33,17 +33,13 @@ export class GetExchangeRates extends Component {
                     euro: getEuro(currencyData),
                     sek: getSek(currencyData),
                     date: getDate(currencyData),
+                    isFetching: false,
                 });
-            })
-            .then(() => {
-                localStorage.setItem('sek', this.state.sek);
-                localStorage.setItem('euro', this.state.euro);
-                localStorage.setItem('date', this.state.date);
-                this.setState({ isFetching: false });
             })
             .catch(error => {
                 this.setState({
                     isSuccess: false,
+                    isFetching: false,
                 });
             });
     };
