@@ -142,7 +142,7 @@ class App extends Component {
         );
 
         const pageTwo = (
-            <div className="w-full flex flex-col lg:flex-row justify-around mt-4 lg:max-w-2xl m-auto p-3">
+            <div className="w-full flex flex-col lg:flex-row justify-around mt-4 lg:max-w-2xl m-auto lg:p-3">
                 <TimerCard
                     timerStarted={this.state.timer.timerStarted}
                     resetTimer={this.handleTimerReset}
