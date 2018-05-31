@@ -1,7 +1,4 @@
 import React from 'react';
-import SaveIcon from '../icons/basic_floppydisk.svg';
-import EditIcon from '../icons/software_pencil.svg';
-import CancelIcon from '../icons/arrows_remove.svg';
 import MemoIcon from '../icons/basic_book_pencil.svg';
 
 export const MemoCard = ({
