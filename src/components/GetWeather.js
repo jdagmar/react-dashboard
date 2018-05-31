@@ -15,7 +15,7 @@ const getWeatherCode = weatherData => {
 
 export class GetWeather extends Component {
     state = {
-        city: 'stockholm',
+        city: 'Stockholm',
         degree: 0,
         description: '',
         weatherCode: 0,
@@ -37,7 +37,6 @@ export class GetWeather extends Component {
                 });
             })
             .catch(error => {
-                // console.error(error);
                 this.setState({
                     isSuccess: false,
                 });
