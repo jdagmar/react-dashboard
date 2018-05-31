@@ -25,7 +25,7 @@ export const ExchangeCard = ({
             >
                 {isSuccess ? (
                     <React.Fragment>
-                        <div className="flex justify-center lg:justify-between mt-2 mb-2 lg:mb-0">
+                        <div className="flex lg:justify-between mt-2">
                             <p className="whitespace-no-wrap">
                                 {Number.parseFloat(sek).toFixed(2)}{' '}
                                 <span className="text-xs">SEK</span>
@@ -55,7 +55,6 @@ export const ExchangeCard = ({
                         <div className="ml-auto mt-4">
                             <button
                                 onClick={refresh}
-                                onMo
                                 className="font-light font-sans text-sm"
                             >
                                 Refresh

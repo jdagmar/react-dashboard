@@ -26,7 +26,7 @@ export const TimerCard = ({
     resetTimer,
 }) => {
     return (
-        <div className="shadow w-full lg:w-2/5 h-48 flex bg-white mb-2">
+        <div className="shadow w-full lg:w-1/2 lg:m-8 h-48 flex bg-white mb-2">
             <div className="bg-indigo-darker p-2">
                 <img className="w-8" src={TimerIcon} alt=" " />
             </div>

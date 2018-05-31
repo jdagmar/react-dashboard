@@ -142,7 +142,7 @@ class App extends Component {
         );
 
         const pageTwo = (
-            <div className="w-full flex flex-col lg:flex-row justify-around mt-4">
+            <div className="w-full flex flex-col lg:flex-row justify-around mt-4 lg:max-w-2xl m-auto p-3">
                 <TimerCard
                     timerStarted={this.state.timer.timerStarted}
                     resetTimer={this.handleTimerReset}
@@ -168,7 +168,7 @@ class App extends Component {
                 {this.state.mobileMenu.isOpen && <Sidebar />}
 
                 <Hammer onSwipe={this.handleViewToggle}>
-                    <div className="flex flex-wrap flex-col w-5/6 mt-4 m-auto">
+                    <div className="flex flex-wrap flex-col w-5/6 lg:mt-8 m-auto">
                         {!this.state.isMobile ? (
                             <React.Fragment>
                                 {pageOne}
