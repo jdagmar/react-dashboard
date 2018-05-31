@@ -4,12 +4,12 @@ import TimerIcon from '../icons/basic_anticlockwise.svg';
 const FormatedInterval = ({ interval }) => {
     const minutes = Math.floor(interval / 60);
     const seconds = interval - minutes * 60;
-    const finishedStyle = 'bg-red-light rounded text-white p-2';
+    const finishedClasses = 'bg-red-light rounded text-white p-2';
 
     return (
         <p
             className={`text-center text-2xl my-4 ${
-                interval === 0 ? finishedStyle : ''
+                interval === 0 ? finishedClasses : ''
             }`}
         >
             <time>{`0${minutes}:${seconds < 10 ? 0 : ''}${seconds}`}</time>
