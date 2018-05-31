@@ -4,7 +4,7 @@ import ArrowRight from '../icons/arrows_right.svg';
 
 export const TabBar = ({ toggleView, currentPage }) => {
     const isLeftDisabled = currentPage === 'first';
-    const disabledStyling = 'opacity-50 cursor-not-allowed';
+    const disabledClasses = 'opacity-50 cursor-not-allowed';
 
     return (
         <nav className="lg:hidden w-full flex m-auto">
@@ -12,7 +12,7 @@ export const TabBar = ({ toggleView, currentPage }) => {
                 <button
                     onClick={toggleView}
                     disabled={isLeftDisabled && 'disabled'}
-                    className={isLeftDisabled && disabledStyling}
+                    className={isLeftDisabled && disabledClasses}
                 >
                     <img
                         className="w-10"
@@ -23,7 +23,7 @@ export const TabBar = ({ toggleView, currentPage }) => {
                 <button
                     onClick={toggleView}
                     disabled={!isLeftDisabled && 'disabled'}
-                    className={!isLeftDisabled && disabledStyling}
+                    className={!isLeftDisabled && disabledClasses}
                 >
                     <img
                         className="w-10"

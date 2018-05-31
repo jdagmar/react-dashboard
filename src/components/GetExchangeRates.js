@@ -15,8 +15,8 @@ const getDate = currencyData => {
 
 export class GetExchangeRates extends Component {
     state = {
-        sek: localStorage.getItem('sek') || 0,
-        euro: localStorage.getItem('euro') || 0,
+        sek: 0,
+        euro: 0,
         date: 0,
         isSuccess: true,
         isFetching: false,

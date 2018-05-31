@@ -34,7 +34,6 @@ export const TimerCard = ({
                 {timerStarted ? (
                     <React.Fragment>
                         <FormatedInterval interval={interval} />
-
                         <div className="flex justify-around">
                             <button
                                 onClick={cancelTimer}

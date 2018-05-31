@@ -19,14 +19,15 @@ export const ExchangeCard = ({
                 <img src={CurrencyIcon} alt=" " />
             </div>
             <div
-                className={`flex ${
+                className={`flex justify-between p-4 w-full ${
                     isSuccess ? 'flex-col' : 'flex-row'
-                } justify-between p-4 w-full`}
+                }`}
             >
                 {isSuccess ? (
                     <React.Fragment>
                         <div className="flex lg:justify-between m-auto">
                             <p className="whitespace-no-wrap">
+                                {/* limit to 2 decimals */}
                                 {Number.parseFloat(sek).toFixed(2)}{' '}
                                 <span className="text-xs">SEK</span>
                             </p>
@@ -36,6 +37,7 @@ export const ExchangeCard = ({
                                 alt=""
                             />
                             <p className="whitespace-no-wrap">
+                                {/* limit to 2 decimals */}
                                 {Number.parseFloat(euro).toFixed(2)}{' '}
                                 <span className="text-xs">EUR</span>
                             </p>
