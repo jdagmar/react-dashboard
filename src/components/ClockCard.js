@@ -18,7 +18,7 @@ export const ClockCard = ({ date }) => {
                         }).format(date)}
                     </time>
                 </p>
-                <p className="mt-4">
+                <p className="mt-4 text-sm">
                     <time>
                         {new Intl.DateTimeFormat('en-US', {
                             month: 'short',
