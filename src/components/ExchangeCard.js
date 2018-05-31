@@ -25,7 +25,7 @@ export const ExchangeCard = ({
             >
                 {isSuccess ? (
                     <React.Fragment>
-                        <div className="flex lg:justify-between mt-2">
+                        <div className="flex lg:justify-between m-auto">
                             <p className="whitespace-no-wrap">
                                 {Number.parseFloat(sek).toFixed(2)}{' '}
                                 <span className="text-xs">SEK</span>
@@ -40,7 +40,8 @@ export const ExchangeCard = ({
                                 <span className="text-xs">EUR</span>
                             </p>
                         </div>
-                        <p className="text-xs text-center">
+                        <div className="text-xs text-center mt-2 leading-normal">
+                            <p>Last updated at</p>
                             <time>
                                 {new Intl.DateTimeFormat('en-US', {
                                     hour12: false,
@@ -51,13 +52,13 @@ export const ExchangeCard = ({
                                     minute: '2-digit',
                                 }).format(date)}
                             </time>
-                        </p>
+                        </div>
                         <div className="ml-auto mt-4">
                             <button
                                 onClick={refresh}
                                 className="font-light font-sans text-sm"
                             >
-                                Refresh
+                                Check for updates
                                 <img
                                     className={`w-4 ml-2 align-text-top ${
                                         rotateIcon ? rotationClass : ''
