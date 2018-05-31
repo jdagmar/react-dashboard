@@ -5,7 +5,27 @@ import RainIcon from '../icons/weather_rain.svg';
 import SnowIcon from '../icons/weather_snow.svg';
 import WindIcon from '../icons/weather_wind.svg';
 import WeatherCardIcon from '../icons/weather_variable_fullmoon.svg';
-import SadIcon from '../icons/basic_elaboration_message_sad.svg';
+import FailIcon from '../icons/basic_elaboration_message_sad.svg';
+
+const getWeatherIcon = weatherCode => {
+    /* convert ex all weathercodes starting with 500 to 
+    the weathergroup 5 for easier management of weathericons */
+    const weatherGroup = Math.floor(weatherCode / 100);
+
+    switch (weatherGroup) {
+        case 2:
+            return ThunderIcon;
+        case 3:
+        case 5:
+            return RainIcon;
+        case 6:
+            return SnowIcon;
+        case 7:
+            return WindIcon;
+        default:
+            return ClearIcon;
+    }
+};
 
 export const WeatherCard = ({
     city,
@@ -14,27 +34,6 @@ export const WeatherCard = ({
     weatherCode,
     isSuccess,
 }) => {
-    let WeatherIcon = '';
-
-    switch (Math.floor(weatherCode / 100)) {
-        case 2:
-            WeatherIcon = ThunderIcon;
-            break;
-        case 3:
-        case 5:
-            WeatherIcon = RainIcon;
-            break;
-        case 6:
-            WeatherIcon = SnowIcon;
-            break;
-        case 7:
-            WeatherIcon = WindIcon;
-            break;
-        default:
-            WeatherIcon = ClearIcon;
-            break;
-    }
-
     return (
         <div className="shadow flex w-full lg:w-1/4 m-auto mb-2 lg:h-full">
             <div className="bg-blue-light flex p-4">
@@ -50,7 +49,7 @@ export const WeatherCard = ({
                         </div>
                         <img
                             className="w-8 h-8 ml-2 self-center"
-                            src={WeatherIcon}
+                            src={getWeatherIcon(weatherCode)}
                             alt=" "
                         />
                     </React.Fragment>
@@ -59,7 +58,7 @@ export const WeatherCard = ({
                         <p className="w-24 leading-tight">
                             Weather not available at the moment
                         </p>
-                        <img className="w-8 h-8" src={SadIcon} alt=" " />
+                        <img className="w-8 h-8" src={FailIcon} alt=" " />
                     </React.Fragment>
                 )}
             </div>
