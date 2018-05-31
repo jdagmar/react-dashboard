@@ -6,6 +6,7 @@ import SnowIcon from '../icons/weather_snow.svg';
 import WindIcon from '../icons/weather_wind.svg';
 import WeatherCardIcon from '../icons/weather_variable_fullmoon.svg';
 import FailIcon from '../icons/basic_elaboration_message_sad.svg';
+import { Spinner } from './Spinner.js';
 
 const getWeatherIcon = weatherCode => {
     /* convert ex all weathercodes starting with 500 to 
@@ -33,6 +34,7 @@ export const WeatherCard = ({
     description,
     weatherCode,
     isSuccess,
+    isFetching,
 }) => {
     return (
         <div className="shadow flex w-full lg:w-1/4 m-auto mb-2 lg:h-full">
@@ -40,7 +42,9 @@ export const WeatherCard = ({
                 <img src={WeatherCardIcon} alt=" " />
             </div>
             <div className="w-full p-6 flex justify-center lg:justify-around bg-white">
-                {isSuccess ? (
+                {isFetching ? (
+                    <Spinner />
+                ) : isSuccess ? (
                     <React.Fragment>
                         <div className="leading-normal">
                             <p>{city}</p>

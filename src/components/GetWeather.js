@@ -20,9 +20,11 @@ export class GetWeather extends Component {
         description: '',
         weatherCode: 0,
         isSuccess: true,
+        isFetching: false,
     };
 
     componentWillMount() {
+        this.setState({ isFetching: true });
         fetch(
             `http://api.openweathermap.org/data/2.5/weather?q=${
                 this.state.city
@@ -34,11 +36,14 @@ export class GetWeather extends Component {
                     degree: getDegree(weatherData),
                     description: getDescription(weatherData),
                     weatherCode: getWeatherCode(weatherData),
+                    isSuccess: true,
+                    isFetching: false,
                 });
             })
             .catch(error => {
                 this.setState({
                     isSuccess: false,
+                    isFetching: false,
                 });
             });
     }
@@ -51,6 +56,7 @@ export class GetWeather extends Component {
                     description={this.state.description}
                     weatherCode={this.state.weatherCode}
                     isSuccess={this.state.isSuccess}
+                    isFetching={this.state.isFetching}
                 />
             </React.Fragment>
         );
