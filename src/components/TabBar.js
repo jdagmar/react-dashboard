@@ -9,6 +9,7 @@ export const TabBar = ({ handleViewToggle, currentPage }) => {
     return (
         <nav className="lg:hidden w-full flex m-auto">
             <div className="flex justify-around w-full">
+                {/* if there is no more content to see to the 'left' disable button */}
                 <button
                     onClick={handleViewToggle}
                     disabled={isLeftDisabled && 'disabled'}
@@ -20,6 +21,7 @@ export const TabBar = ({ handleViewToggle, currentPage }) => {
                         alt="click to see more content"
                     />
                 </button>
+                {/* if there is no more content to the 'right' disabled button */}
                 <button
                     onClick={handleViewToggle}
                     disabled={!isLeftDisabled && 'disabled'}

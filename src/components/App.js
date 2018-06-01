@@ -34,6 +34,7 @@ class App extends Component {
         },
     };
 
+    // handles page control in mobileview
     handleViewToggle = () => {
         const currentPage = this.state.tabBar.currentPage;
         const secondPage = currentPage === 'first' ? 'second' : 'first';
@@ -42,6 +43,7 @@ class App extends Component {
         });
     };
 
+    // handle toggling of hamburger menu
     handleMenuToggle = () => {
         const currentState = this.state.mobileMenu.isOpen;
         const isOpen = !currentState;
@@ -110,6 +112,7 @@ class App extends Component {
         this.setState({ memo: { ...this.state.memo, memoText } });
     };
 
+    // if desktop force the sidebar to always show
     handleWindowSize = () => {
         const isMobile = window.innerWidth <= 992;
 
@@ -140,7 +143,10 @@ class App extends Component {
         );
 
         const pageTwo = (
-            <div className="w-full flex flex-col lg:flex-row justify-around mt-4 lg:max-w-2xl m-auto lg:p-3">
+            <div
+                className="w-full flex flex-col lg:flex-row justify-around mt-4 lg:max-w-2xl
+                m-auto lg:p-3"
+            >
                 <TimerCard
                     isTimerStarted={this.state.timer.isTimerStarted}
                     handleTimerReset={this.handleTimerReset}
@@ -165,14 +171,17 @@ class App extends Component {
                 <HamburgerBar toggleMenu={this.handleMenuToggle} />
                 {this.state.mobileMenu.isOpen && <Sidebar />}
 
+                {/* all content inside hammer can be handled via swipe */}
                 <Hammer onSwipe={this.handleViewToggle}>
                     <div className="flex flex-wrap flex-col w-5/6 lg:mt-8 m-auto">
                         {!this.state.isMobile ? (
+                            // if desktop view show all cards
                             <React.Fragment>
                                 {pageOne}
                                 {pageTwo}
                             </React.Fragment>
-                        ) : this.state.tabBar.currentPage === 'first' ? (
+                        ) : // if mobile use page control to navigate between pages
+                        this.state.tabBar.currentPage === 'first' ? (
                             pageOne
                         ) : this.state.tabBar.currentPage === 'second' ? (
                             pageTwo
@@ -180,6 +189,7 @@ class App extends Component {
                     </div>
                 </Hammer>
 
+                {/* page control nav */}
                 <TabBar
                     handleViewToggle={this.handleViewToggle}
                     currentPage={this.state.tabBar.currentPage}
