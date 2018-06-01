@@ -15,7 +15,7 @@ class App extends Component {
         isMobile: false,
         memo: {
             isEditMode: false,
-            memoText: localStorage.getItem('memotext') || '',
+            memoText: localStorage.getItem('memotext') || 'note to self...',
         },
         clock: {
             date: new Date(),
