@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Hammer from 'react-hammerjs';
-import { Wrapper } from './components/Wrapper';
-import { Sidebar } from './components/Sidebar';
-import { GetExchangeRates } from './components/GetExchangeRates';
-import { TimerCard } from './components/TimerCard';
-import { ClockCard } from './components/ClockCard';
-import { MemoCard } from './components/MemoCard';
-import { GetWeather } from './components/GetWeather';
-import { HamburgerBar } from './components/HamburgerBar';
-import { TabBar } from './components/TabBar';
+import { Wrapper } from './Wrapper';
+import { Sidebar } from './Sidebar';
+import { GetExchangeRates } from './GetExchangeRates';
+import { TimerCard } from './TimerCard';
+import { ClockCard } from './ClockCard';
+import { MemoCard } from './MemoCard';
+import { GetWeather } from './GetWeather';
+import { HamburgerBar } from './HamburgerBar';
+import { TabBar } from './TabBar';
 
 class App extends Component {
     state = {
