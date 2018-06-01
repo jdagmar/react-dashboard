@@ -37,7 +37,7 @@ export const WeatherCard = ({
     isFetching,
 }) => {
     return (
-        <div className="shadow flex w-full lg:w-1/4 m-auto mb-2 lg:h-full">
+        <div className="shadow flex w-full lg:w-1/4 m-auto mb-2 h-32 lg:h-full">
             <div className="bg-blue-light flex p-4">
                 <img src={WeatherCardIcon} alt=" " />
             </div>

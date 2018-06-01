@@ -14,7 +14,7 @@ export const ExchangeCard = ({
 }) => {
     const rotationClass = 'rotate-animate';
     return (
-        <div className="shadow w-full lg:w-1/4 flex bg-white m-auto mb-2 lg:h-full">
+        <div className="shadow w-full lg:w-1/4 flex bg-white m-auto mb-2 h-32 lg:h-full">
             <div className="bg-green flex p-4">
                 <img src={CurrencyIcon} alt=" " />
             </div>

@@ -143,10 +143,7 @@ class App extends Component {
         );
 
         const pageTwo = (
-            <div
-                className="w-full flex flex-col lg:flex-row justify-around mt-4 lg:max-w-2xl
-                m-auto lg:p-3"
-            >
+            <div className="w-full flex flex-col lg:flex-row justify-around lg:max-w-2xl lg:p-3">
                 <TimerCard
                     isTimerStarted={this.state.timer.isTimerStarted}
                     handleTimerReset={this.handleTimerReset}
@@ -173,7 +170,7 @@ class App extends Component {
 
                 {/* all content inside hammer can be handled via swipe */}
                 <Hammer onSwipe={this.handleViewToggle}>
-                    <div className="flex flex-wrap flex-col w-5/6 lg:mt-8 m-auto">
+                    <div className="flex flex-wrap flex-col w-5/6 lg:mt-8 mx-auto">
                         {!this.state.isMobile ? (
                             // if desktop view show all cards
                             <React.Fragment>

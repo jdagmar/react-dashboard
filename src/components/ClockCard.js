@@ -3,7 +3,7 @@ import CalendarIcon from '../icons/basic_calendar.svg';
 
 export const ClockCard = ({ date }) => {
     return (
-        <div className="shadow w-full lg:w-1/4 text-center flex bg-white m-auto mb-2 lg:h-full">
+        <div className="shadow w-full lg:w-1/4 text-center flex bg-white m-auto mb-2 h-32 lg:h-full">
             <div className="bg-red-light p-4 flex">
                 <img src={CalendarIcon} alt=" " />
             </div>
