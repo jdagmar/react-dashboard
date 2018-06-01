@@ -14,15 +14,14 @@ class App extends Component {
     state = {
         isMobile: false,
         memo: {
-            editMode: false,
+            isEditMode: false,
             memoText: localStorage.getItem('memotext') || '',
         },
         clock: {
             date: new Date(),
         },
         timer: {
-            timerStarted: false,
-            timerEnded: false,
+            isTimerStarted: false,
             interval: 0,
             startInterval: 60,
             counter: '',
@@ -76,7 +75,7 @@ class App extends Component {
             timer: {
                 ...this.state.timer,
                 interval: this.state.timer.startInterval,
-                timerStarted: true,
+                isTimerStarted: true,
                 counter,
             },
         });
@@ -84,7 +83,7 @@ class App extends Component {
 
     handleTimerCancel = () => {
         this.setState({
-            timer: { ...this.state.timer, timerStarted: false, interval: 0 },
+            timer: { ...this.state.timer, isTimerStarted: false, interval: 0 },
         });
 
         clearInterval(this.state.timer.counter);
@@ -100,11 +99,11 @@ class App extends Component {
     };
 
     handleMemoEdit = () => {
-        this.setState({ memo: { ...this.state.memo, editMode: true } });
+        this.setState({ memo: { ...this.state.memo, isEditMode: true } });
     };
 
     handleMemoCancel = () => {
-        this.setState({ memo: { ...this.state.memo, editMode: false } });
+        this.setState({ memo: { ...this.state.memo, isEditMode: false } });
     };
 
     handleMemoUpdate = memoText => {
@@ -143,20 +142,20 @@ class App extends Component {
         const pageTwo = (
             <div className="w-full flex flex-col lg:flex-row justify-around mt-4 lg:max-w-2xl m-auto lg:p-3">
                 <TimerCard
-                    timerStarted={this.state.timer.timerStarted}
-                    resetTimer={this.handleTimerReset}
-                    startTimer={this.handleTimerStart}
+                    isTimerStarted={this.state.timer.isTimerStarted}
+                    handleTimerReset={this.handleTimerReset}
+                    handleTimerStart={this.handleTimerStart}
                     cancelTimer={this.handleTimerCancel}
-                    getOptionValue={this.handleSelectedOption}
+                    handleSelectedOption={this.handleSelectedOption}
                     interval={this.state.timer.interval}
                 />
                 <MemoCard
-                    editMode={this.state.memo.editMode}
+                    isEditMode={this.state.memo.isEditMode}
                     memoText={this.state.memo.memoText}
-                    onEdit={this.handleMemoEdit}
-                    onSave={this.handleMemoSave}
-                    onCancel={this.handleMemoCancel}
-                    onUpdate={this.handleMemoUpdate}
+                    handleMemoEdit={this.handleMemoEdit}
+                    handleMemoSave={this.handleMemoSave}
+                    handleMemoCance={this.handleMemoCancel}
+                    handleMemoUpdate={this.handleMemoUpdate}
                 />
             </div>
         );
@@ -182,7 +181,7 @@ class App extends Component {
                 </Hammer>
 
                 <TabBar
-                    toggleView={this.handleViewToggle}
+                    handleViewToggle={this.handleViewToggle}
                     currentPage={this.state.tabBar.currentPage}
                 />
             </Wrapper>

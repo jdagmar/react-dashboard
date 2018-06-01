@@ -2,7 +2,7 @@ import React from 'react';
 import ArrowLeft from '../icons/arrows_left.svg';
 import ArrowRight from '../icons/arrows_right.svg';
 
-export const TabBar = ({ toggleView, currentPage }) => {
+export const TabBar = ({ handleViewToggle, currentPage }) => {
     const isLeftDisabled = currentPage === 'first';
     const disabledClasses = 'opacity-50 cursor-not-allowed';
 
@@ -10,7 +10,7 @@ export const TabBar = ({ toggleView, currentPage }) => {
         <nav className="lg:hidden w-full flex m-auto">
             <div className="flex justify-around w-full">
                 <button
-                    onClick={toggleView}
+                    onClick={handleViewToggle}
                     disabled={isLeftDisabled && 'disabled'}
                     className={isLeftDisabled && disabledClasses}
                 >
@@ -21,7 +21,7 @@ export const TabBar = ({ toggleView, currentPage }) => {
                     />
                 </button>
                 <button
-                    onClick={toggleView}
+                    onClick={handleViewToggle}
                     disabled={!isLeftDisabled && 'disabled'}
                     className={!isLeftDisabled && disabledClasses}
                 >

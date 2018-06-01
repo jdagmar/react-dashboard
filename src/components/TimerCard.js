@@ -18,12 +18,12 @@ const FormatedInterval = ({ interval }) => {
 };
 
 export const TimerCard = ({
-    timerStarted,
-    startTimer,
-    cancelTimer,
-    getOptionValue,
+    isTimerStarted,
+    handleTimerStart,
+    handleTimerCancel,
+    handleSelectedOption,
     interval,
-    resetTimer,
+    handleTimerReset,
 }) => {
     return (
         <div className="shadow w-full lg:w-1/2 lg:m-8 h-48 flex bg-white mb-2">
@@ -31,12 +31,12 @@ export const TimerCard = ({
                 <img className="w-8" src={TimerIcon} alt=" " />
             </div>
             <div className="p-2 flex flex-col justify-between text-center w-full">
-                {timerStarted ? (
+                {isTimerStarted ? (
                     <React.Fragment>
                         <FormatedInterval interval={interval} />
                         <div className="flex justify-around">
                             <button
-                                onClick={cancelTimer}
+                                onClick={handleTimerCancel}
                                 className="w-24 rounded-full my-2 p-2 font-sans font-light border border-red-light hover:text-white hover:bg-red-light"
                             >
                                 <span>Cancel</span>
@@ -44,7 +44,7 @@ export const TimerCard = ({
                             {interval <= 0 ? (
                                 <React.Fragment>
                                     <button
-                                        onClick={resetTimer}
+                                        onClick={handleTimerReset}
                                         className="w-24 rounded-full my-2 p-2 font-sans font-light border border-yellow-dark hover:text-white hover:bg-yellow-dark"
                                     >
                                         Reset
@@ -60,7 +60,7 @@ export const TimerCard = ({
                         </label>
                         <select
                             id="intervals"
-                            onChange={getOptionValue}
+                            onChange={handleSelectedOption}
                             className="block m-auto w-full border border-grey-light"
                             name="interval"
                             size="5"
@@ -94,7 +94,7 @@ export const TimerCard = ({
                             </option>
                         </select>
                         <button
-                            onClick={startTimer}
+                            onClick={handleTimerStart}
                             className="m-auto w-16 rounded-full my-2 p-2 font-sans font-light border border-green hover:text-white hover:bg-green"
                         >
                             Start
