@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Hammer from 'react-hammerjs';
 import { Wrapper } from './components/Wrapper';
 import { Sidebar } from './components/Sidebar';
-import { Container } from './components/Container';
 import { GetExchangeRates } from './components/GetExchangeRates';
 import { TimerCard } from './components/TimerCard';
 import { ClockCard } from './components/ClockCard';
