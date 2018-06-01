@@ -1,5 +1,5 @@
 import React from 'react';
-import RefreshIcon from '../icons/arrows_rotate.svg';
+import UpdateIcon from '../icons/arrows_rotate.svg';
 import ArrowsIcon from '../icons/arrows_switch_horizontal.svg';
 import CurrencyIcon from '../icons/ecommerce_banknotes.svg';
 import FailIcon from '../icons/basic_elaboration_message_sad.svg';
@@ -8,7 +8,7 @@ export const ExchangeCard = ({
     sek,
     euro,
     date,
-    refresh,
+    GetCurrencyData,
     isSuccess,
     isFetching,
 }) => {
@@ -57,7 +57,7 @@ export const ExchangeCard = ({
                         </div>
                         <div className="ml-auto mt-4">
                             <button
-                                onClick={refresh}
+                                onClick={GetCurrencyData}
                                 className="font-light font-sans text-sm"
                             >
                                 Check for updates
@@ -65,7 +65,7 @@ export const ExchangeCard = ({
                                     className={`w-4 ml-2 align-text-top ${
                                         isFetching ? rotationClass : ''
                                     }`}
-                                    src={RefreshIcon}
+                                    src={UpdateIcon}
                                     alt=" "
                                 />
                             </button>

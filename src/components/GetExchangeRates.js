@@ -55,7 +55,7 @@ export class GetExchangeRates extends Component {
                     euro={this.state.euro}
                     sek={this.state.sek}
                     date={this.state.date}
-                    refresh={this.GetCurrencyData}
+                    GetCurrencyData={this.GetCurrencyData}
                     isSuccess={this.state.isSuccess}
                     isFetching={this.state.isFetching}
                 />

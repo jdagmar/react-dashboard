@@ -145,7 +145,7 @@ class App extends Component {
                     isTimerStarted={this.state.timer.isTimerStarted}
                     handleTimerReset={this.handleTimerReset}
                     handleTimerStart={this.handleTimerStart}
-                    cancelTimer={this.handleTimerCancel}
+                    handleTimerCancel={this.handleTimerCancel}
                     handleSelectedOption={this.handleSelectedOption}
                     interval={this.state.timer.interval}
                 />
@@ -154,7 +154,7 @@ class App extends Component {
                     memoText={this.state.memo.memoText}
                     handleMemoEdit={this.handleMemoEdit}
                     handleMemoSave={this.handleMemoSave}
-                    handleMemoCance={this.handleMemoCancel}
+                    handleMemoCancel={this.handleMemoCancel}
                     handleMemoUpdate={this.handleMemoUpdate}
                 />
             </div>
