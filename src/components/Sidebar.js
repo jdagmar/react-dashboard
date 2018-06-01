@@ -4,6 +4,7 @@ import SettingsIcon from '../icons/basic_gear.svg';
 import NotificationIcon from '../icons/music_bell.svg';
 import SignoutIcon from '../icons/arrows_move_right.svg';
 
+/* sidebar is just a dummy component to simulate a dashboard environment */
 export const Sidebar = () => (
     <aside className="h-screen bg-black w-full lg:w-1/6 overflow-hidden h-full">
         <nav className="flex flex-col justify-between">
